@@ -66,7 +66,7 @@ than breaking the whole update (see the `soft()` helper in `scripts/lib/http.mjs
 
 ```
 npm install
-npm run dev       # dev server at /fishingapp/
+npm run dev       # dev server at /Fishingapp/
 npm run build     # production build to dist/
 npm run fetch-conditions   # re-runs the data pipeline against public/data/conditions.json
 ```
@@ -80,4 +80,4 @@ the site renders correctly before the first scheduled run publishes live data.
 2. In the repo's Settings → Pages, set **Source** to "GitHub Actions".
 3. Settings → Actions → General → Workflow permissions must allow "Read and write permissions"
    so `update-conditions.yml` can commit `conditions.json` back to the repo.
-4. The site will be live at `https://ssgrenon.github.io/fishingapp/`.
+4. The site will be live at `https://ssgrenon.github.io/Fishingapp/`.
