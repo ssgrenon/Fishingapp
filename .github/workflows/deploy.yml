@@ -3,6 +3,9 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  workflow_run:
+    workflows: ["Update conditions data"]
+    types: [completed]
   workflow_dispatch: {}
 
 permissions:
@@ -16,9 +19,15 @@ concurrency:
 
 jobs:
   build:
+    # A push made with the default GITHUB_TOKEN (as update-conditions.yml does) doesn't
+    # trigger this workflow's `push` event, so we also listen for that workflow's
+    # completion directly. Skip if it failed so we don't redeploy on a broken data run.
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
