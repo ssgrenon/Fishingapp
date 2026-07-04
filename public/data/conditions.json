@@ -1,0 +1,105 @@
+{
+  "location": { "name": "Oak Island, NC", "lat": 33.9107, "lon": -78.1653 },
+  "updated": "2026-07-04T06:52:00-04:00",
+  "isSample": true,
+  "tide": {
+    "station": "8659182",
+    "curvePoints": [4.1, 2.6, 0.6, 0.4, 1.6, 3.6, 4.3, 3.4, 1.2],
+    "next": [
+      { "type": "High", "time": "2026-07-04T18:58:00-04:00", "heightFt": 4.3 },
+      { "type": "Low", "time": "2026-07-05T00:41:00-04:00", "heightFt": 0.2 },
+      { "type": "High", "time": "2026-07-05T06:31:00-04:00", "heightFt": 4.1 }
+    ],
+    "thresholds": { "superHighFt": 4.2, "superLowFt": 0.3 }
+  },
+  "sun": {
+    "dawn": "2026-07-04T05:52:00-04:00",
+    "sunrise": "2026-07-04T06:18:00-04:00",
+    "sunset": "2026-07-04T20:31:00-04:00",
+    "dusk": "2026-07-04T20:57:00-04:00"
+  },
+  "moon": {
+    "rise": "2026-07-04T13:47:00-04:00",
+    "set": "2026-07-05T00:56:00-04:00",
+    "illumination": 0.78,
+    "phaseName": "Waxing gibbous"
+  },
+  "solunar": {
+    "majors": [
+      { "start": "2026-07-04T06:18:00-04:00", "end": "2026-07-04T08:18:00-04:00" },
+      { "start": "2026-07-04T18:42:00-04:00", "end": "2026-07-04T20:42:00-04:00" }
+    ],
+    "minors": [
+      { "start": "2026-07-04T00:35:00-04:00", "end": "2026-07-04T01:35:00-04:00" },
+      { "start": "2026-07-04T13:02:00-04:00", "end": "2026-07-04T14:02:00-04:00" }
+    ],
+    "featuredIndex": 1,
+    "featuredNote": "Overlaps dusk ✦ best window"
+  },
+  "waves": {
+    "source": "NDBC 41013 Frying Pan Shoals",
+    "current": { "heightFt": 2.1, "periodSec": 7, "direction": "SE", "chop": "Light" },
+    "thresholds": { "calmMaxFt": 2.1, "moderateMaxFt": 3.1 },
+    "next6h": [
+      { "label": "8a", "heightFt": 1.8 },
+      { "label": "9a", "heightFt": 1.9 },
+      { "label": "10a", "heightFt": 2.0 },
+      { "label": "11a", "heightFt": 2.3 },
+      { "label": "12p", "heightFt": 2.6 },
+      { "label": "1p", "heightFt": 2.9 }
+    ]
+  },
+  "weather": {
+    "source": "NWS gridpoint ILM",
+    "tempF": 86,
+    "conditions": "Partly cloudy",
+    "windMph": 12,
+    "windGustMph": 18,
+    "windDirLabel": "SW",
+    "humidityPct": 71,
+    "rainNext6h": [
+      { "label": "8a", "pct": 5, "storm": false },
+      { "label": "9a", "pct": 10, "storm": false },
+      { "label": "10a", "pct": 15, "storm": false },
+      { "label": "11a", "pct": 25, "storm": false },
+      { "label": "12p", "pct": 45, "storm": true },
+      { "label": "1p", "pct": 60, "storm": true }
+    ],
+    "stormRisk": {
+      "present": true,
+      "windowLabel": "12:00 – 2:00 PM"
+    }
+  },
+  "pressure": {
+    "current": 30.08,
+    "trend": "steady",
+    "trendNote": "rising 0.02 in since midnight",
+    "last24h": [30.02, 30.01, 30.03, 30.04, 30.05, 30.06, 30.07, 30.06, 30.08]
+  },
+  "water": {
+    "tempF": 79,
+    "clarity": "Fair, light stain",
+    "note": "Cape Fear discharge above normal — recent rain may reduce clarity near inlets",
+    "riverDischarge": "Above normal"
+  },
+  "biteScore": {
+    "value": 78,
+    "verdict": "Good",
+    "headline": "Good bite window this evening",
+    "reasons": [
+      { "tier": "good", "text": "Pressure steady, 30.08 in" },
+      { "tier": "good", "text": "Major period overlaps dusk" },
+      { "tier": "caution", "text": "SW wind freshening after 4 PM" },
+      { "tier": "good", "text": "Incoming tide 4–7 PM" }
+    ]
+  },
+  "weekly": [
+    { "date": "2026-07-04", "day": "Sat", "windMph": 12, "windDir": "SW", "waveFt": 2.0, "score": 78, "tier": "good" },
+    { "date": "2026-07-05", "day": "Sun", "windMph": 10, "windDir": "S", "waveFt": 1.6, "score": 82, "tier": "good" },
+    { "date": "2026-07-06", "day": "Mon", "windMph": 15, "windDir": "SE", "waveFt": 2.4, "score": 65, "tier": "caution" },
+    { "date": "2026-07-07", "day": "Tue", "windMph": 19, "windDir": "E", "waveFt": 3.1, "score": 48, "tier": "caution" },
+    { "date": "2026-07-08", "day": "Wed", "windMph": 22, "windDir": "NE", "waveFt": 3.8, "score": 32, "tier": "critical" },
+    { "date": "2026-07-09", "day": "Thu", "windMph": 12, "windDir": "N", "waveFt": 2.2, "score": 70, "tier": "good" },
+    { "date": "2026-07-10", "day": "Fri", "windMph": 8, "windDir": "NW", "waveFt": 1.4, "score": 88, "tier": "good" }
+  ]
+}
