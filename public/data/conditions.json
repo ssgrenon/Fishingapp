@@ -1,105 +1,274 @@
 {
-  "location": { "name": "Oak Island, NC", "lat": 33.9107, "lon": -78.1653 },
-  "updated": "2026-07-04T06:52:00-04:00",
-  "isSample": true,
+  "location": {
+    "name": "Oak Island, NC",
+    "lat": 33.9107,
+    "lon": -78.1653
+  },
+  "updated": "2026-07-04T22:40:42.727Z",
+  "isSample": false,
   "tide": {
     "station": "8659182",
-    "curvePoints": [4.1, 2.6, 0.6, 0.4, 1.6, 3.6, 4.3, 3.4, 1.2],
-    "next": [
-      { "type": "High", "time": "2026-07-04T18:58:00-04:00", "heightFt": 4.3 },
-      { "type": "Low", "time": "2026-07-05T00:41:00-04:00", "heightFt": 0.2 },
-      { "type": "High", "time": "2026-07-05T06:31:00-04:00", "heightFt": 4.1 }
+    "curvePoints": [
+      3.6,
+      0.5,
+      1.3,
+      3.8,
+      3.2,
+      1.6,
+      0.9,
+      3.6,
+      4.6
     ],
-    "thresholds": { "superHighFt": 4.2, "superLowFt": 0.3 }
+    "next": [
+      {
+        "type": "High",
+        "time": "2026-07-05T03:19:00.000Z",
+        "heightFt": 4.7
+      },
+      {
+        "type": "Low",
+        "time": "2026-07-05T09:40:00.000Z",
+        "heightFt": 0.3
+      },
+      {
+        "type": "High",
+        "time": "2026-07-05T15:46:00.000Z",
+        "heightFt": 4.2
+      }
+    ],
+    "thresholds": {
+      "superHighFt": 4.2,
+      "superLowFt": 0.3
+    }
   },
   "sun": {
-    "dawn": "2026-07-04T05:52:00-04:00",
-    "sunrise": "2026-07-04T06:18:00-04:00",
-    "sunset": "2026-07-04T20:31:00-04:00",
-    "dusk": "2026-07-04T20:57:00-04:00"
+    "dawn": "2026-07-04T09:38:46.595Z",
+    "sunrise": "2026-07-04T10:07:43.895Z",
+    "sunset": "2026-07-05T00:28:37.818Z",
+    "dusk": "2026-07-05T00:57:35.118Z"
   },
   "moon": {
-    "rise": "2026-07-04T13:47:00-04:00",
-    "set": "2026-07-05T00:56:00-04:00",
-    "illumination": 0.78,
-    "phaseName": "Waxing gibbous"
+    "rise": "2026-07-04T02:58:03.671Z",
+    "set": "2026-07-04T14:22:59.407Z",
+    "illumination": 0.8,
+    "phaseName": "Waning gibbous"
   },
   "solunar": {
     "majors": [
-      { "start": "2026-07-04T06:18:00-04:00", "end": "2026-07-04T08:18:00-04:00" },
-      { "start": "2026-07-04T18:42:00-04:00", "end": "2026-07-04T20:42:00-04:00" }
+      {
+        "start": "2026-07-04T07:42:00.727Z",
+        "end": "2026-07-04T09:42:00.727Z"
+      },
+      {
+        "start": "2026-07-04T20:00:00.727Z",
+        "end": "2026-07-04T22:00:00.727Z"
+      }
     ],
     "minors": [
-      { "start": "2026-07-04T00:35:00-04:00", "end": "2026-07-04T01:35:00-04:00" },
-      { "start": "2026-07-04T13:02:00-04:00", "end": "2026-07-04T14:02:00-04:00" }
+      {
+        "start": "2026-07-04T02:28:03.671Z",
+        "end": "2026-07-04T03:28:03.671Z"
+      },
+      {
+        "start": "2026-07-04T13:52:59.407Z",
+        "end": "2026-07-04T14:52:59.407Z"
+      }
     ],
-    "featuredIndex": 1,
-    "featuredNote": "Overlaps dusk ✦ best window"
+    "featuredIndex": 0,
+    "featuredNote": "Overlaps dawn ✦ best window"
   },
   "waves": {
     "source": "NDBC 41013 Frying Pan Shoals",
-    "current": { "heightFt": 2.1, "periodSec": 7, "direction": "SE", "chop": "Light" },
-    "thresholds": { "calmMaxFt": 2.1, "moderateMaxFt": 3.1 },
+    "current": {
+      "heightFt": null,
+      "periodSec": null,
+      "direction": null,
+      "chop": "Choppy"
+    },
+    "thresholds": {
+      "calmMaxFt": 2.1,
+      "moderateMaxFt": 3.1
+    },
     "next6h": [
-      { "label": "8a", "heightFt": 1.8 },
-      { "label": "9a", "heightFt": 1.9 },
-      { "label": "10a", "heightFt": 2.0 },
-      { "label": "11a", "heightFt": 2.3 },
-      { "label": "12p", "heightFt": 2.6 },
-      { "label": "1p", "heightFt": 2.9 }
+      {
+        "label": "7pm",
+        "heightFt": 1.6
+      },
+      {
+        "label": "8pm",
+        "heightFt": 1.7
+      },
+      {
+        "label": "9pm",
+        "heightFt": 1.8
+      },
+      {
+        "label": "10pm",
+        "heightFt": 1.8
+      },
+      {
+        "label": "11pm",
+        "heightFt": 1.9
+      },
+      {
+        "label": "12am",
+        "heightFt": 2
+      }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 86,
-    "conditions": "Partly cloudy",
-    "windMph": 12,
-    "windGustMph": 18,
-    "windDirLabel": "SW",
-    "humidityPct": 71,
+    "tempF": 84,
+    "conditions": "Partly Cloudy",
+    "windMph": 10,
+    "windGustMph": 10,
+    "windDirLabel": "S",
+    "humidityPct": 76,
     "rainNext6h": [
-      { "label": "8a", "pct": 5, "storm": false },
-      { "label": "9a", "pct": 10, "storm": false },
-      { "label": "10a", "pct": 15, "storm": false },
-      { "label": "11a", "pct": 25, "storm": false },
-      { "label": "12p", "pct": 45, "storm": true },
-      { "label": "1p", "pct": 60, "storm": true }
+      {
+        "label": "6pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "7pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "8pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "9pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "10pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "11pm",
+        "pct": 0,
+        "storm": false
+      }
     ],
     "stormRisk": {
-      "present": true,
-      "windowLabel": "12:00 – 2:00 PM"
+      "present": false,
+      "windowLabel": ""
     }
   },
   "pressure": {
-    "current": 30.08,
-    "trend": "steady",
-    "trendNote": "rising 0.02 in since midnight",
-    "last24h": [30.02, 30.01, 30.03, 30.04, 30.05, 30.06, 30.07, 30.06, 30.08]
+    "current": 29.99,
+    "trend": "falling",
+    "trendNote": "falling 0.07 in since yesterday",
+    "last24h": [
+      30.06,
+      30.06,
+      30.08,
+      30.04,
+      30.04,
+      30.08,
+      30.07,
+      30.03,
+      29.99
+    ]
   },
   "water": {
-    "tempF": 79,
-    "clarity": "Fair, light stain",
-    "note": "Cape Fear discharge above normal — recent rain may reduce clarity near inlets",
-    "riverDischarge": "Above normal"
+    "tempF": 83,
+    "clarity": "Good, relatively clear",
+    "note": "Cape Fear discharge below normal — typically clearer nearshore water",
+    "riverDischarge": "Below normal"
   },
   "biteScore": {
-    "value": 78,
-    "verdict": "Good",
-    "headline": "Good bite window this evening",
+    "value": 74,
+    "verdict": "Fair",
+    "headline": "Fair bite window this morning",
     "reasons": [
-      { "tier": "good", "text": "Pressure steady, 30.08 in" },
-      { "tier": "good", "text": "Major period overlaps dusk" },
-      { "tier": "caution", "text": "SW wind freshening after 4 PM" },
-      { "tier": "good", "text": "Incoming tide 4–7 PM" }
+      {
+        "tier": "critical",
+        "text": "Pressure falling — front likely approaching"
+      },
+      {
+        "tier": "good",
+        "text": "Overlaps dawn"
+      },
+      {
+        "tier": "good",
+        "text": "Wind light, 10 mph S"
+      },
+      {
+        "tier": "good",
+        "text": "Incoming tide"
+      }
     ]
   },
   "weekly": [
-    { "date": "2026-07-04", "day": "Sat", "windMph": 12, "windDir": "SW", "waveFt": 2.0, "score": 78, "tier": "good" },
-    { "date": "2026-07-05", "day": "Sun", "windMph": 10, "windDir": "S", "waveFt": 1.6, "score": 82, "tier": "good" },
-    { "date": "2026-07-06", "day": "Mon", "windMph": 15, "windDir": "SE", "waveFt": 2.4, "score": 65, "tier": "caution" },
-    { "date": "2026-07-07", "day": "Tue", "windMph": 19, "windDir": "E", "waveFt": 3.1, "score": 48, "tier": "caution" },
-    { "date": "2026-07-08", "day": "Wed", "windMph": 22, "windDir": "NE", "waveFt": 3.8, "score": 32, "tier": "critical" },
-    { "date": "2026-07-09", "day": "Thu", "windMph": 12, "windDir": "N", "waveFt": 2.2, "score": 70, "tier": "good" },
-    { "date": "2026-07-10", "day": "Fri", "windMph": 8, "windDir": "NW", "waveFt": 1.4, "score": 88, "tier": "good" }
+    {
+      "date": "2026-07-04",
+      "day": "Sat",
+      "windMph": 13,
+      "windDir": "S",
+      "waveFt": 1.6,
+      "score": 69,
+      "tier": "caution"
+    },
+    {
+      "date": "2026-07-05",
+      "day": "Sun",
+      "windMph": 13,
+      "windDir": "S",
+      "waveFt": 2.3,
+      "score": 66,
+      "tier": "caution"
+    },
+    {
+      "date": "2026-07-06",
+      "day": "Mon",
+      "windMph": 15,
+      "windDir": "SW",
+      "waveFt": 3.3,
+      "score": 48,
+      "tier": "caution"
+    },
+    {
+      "date": "2026-07-07",
+      "day": "Tue",
+      "windMph": 14,
+      "windDir": "SW",
+      "waveFt": 3.6,
+      "score": 44,
+      "tier": "critical"
+    },
+    {
+      "date": "2026-07-08",
+      "day": "Wed",
+      "windMph": 9,
+      "windDir": "SW",
+      "waveFt": 3.2,
+      "score": 53,
+      "tier": "caution"
+    },
+    {
+      "date": "2026-07-09",
+      "day": "Thu",
+      "windMph": 12,
+      "windDir": "SW",
+      "waveFt": 2,
+      "score": 70,
+      "tier": "good"
+    },
+    {
+      "date": "2026-07-10",
+      "day": "Fri",
+      "windMph": 17,
+      "windDir": "SW",
+      "waveFt": 3,
+      "score": 50,
+      "tier": "caution"
+    }
   ]
 }
