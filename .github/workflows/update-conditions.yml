@@ -2,7 +2,10 @@ name: Update conditions data
 
 on:
   schedule:
-    - cron: "*/20 * * * *"
+    # Offset off the :00/:20/:40 boundaries. Scheduled runs on round-number
+    # minutes sit in GitHub's most-contended queue and get dropped/delayed
+    # heavily; odd minutes are far more likely to actually fire on time.
+    - cron: "7,27,47 * * * *"
   workflow_dispatch: {}
 
 permissions:
