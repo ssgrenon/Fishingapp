@@ -4,8 +4,7 @@ import { TideCard } from "./components/TideCard";
 import { SunMoonCard } from "./components/SunMoonCard";
 import { WavesCard } from "./components/WavesCard";
 import { WeatherCard } from "./components/WeatherCard";
-import { PressureCard } from "./components/PressureCard";
-import { WaterCard } from "./components/WaterCard";
+import { LiveCamerasCard } from "./components/LiveCamerasCard";
 import { WeeklyOutlook } from "./components/WeeklyOutlook";
 import { LocalReports } from "./components/LocalReports";
 import { Footer } from "./components/Footer";
@@ -39,9 +38,8 @@ export default function App() {
         <SunMoonCard conditions={conditions} />
         <WavesCard conditions={conditions} />
         <WeatherCard conditions={conditions} />
-        <PressureCard conditions={conditions} />
-        <WaterCard conditions={conditions} />
       </div>
+      <LiveCamerasCard />
       <WeeklyOutlook days={conditions.weekly} />
       <LocalReports reports={reports} nowIso={conditions.updated} />
       <Footer />

@@ -74,7 +74,7 @@ export async function fetchPressure() {
   const currentInHg = Math.round(latestHpa * 0.0295300 * 100) / 100;
   const deltaInHg = Math.round((sparkline[samples - 1] - sparkline[0]) * 100) / 100;
   const trend = Math.abs(deltaInHg) < 0.02 ? "steady" : deltaInHg > 0 ? "rising" : "falling";
-  const trendNote = `${trend === "falling" ? "falling" : "rising"} ${Math.abs(deltaInHg).toFixed(2)} in since ${last24h.length ? "yesterday" : "midnight"}`;
+  const trendNote = `${trend} ${Math.abs(deltaInHg).toFixed(2)} in since ${last24h.length ? "yesterday" : "midnight"}`;
 
   return { current: currentInHg, trend, trendNote, last24h: sparkline };
 }
