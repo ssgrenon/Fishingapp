@@ -18,9 +18,15 @@ interface LinkedCamera extends Camera {
 // ocean-facing cams. `embed` cameras play inline (confirmed embeddable via
 // YouTube's iframe API); `link` cameras open on the source site because their
 // embeddability isn't confirmed (no public widget program, and their pages
-// actively block automated access).
+// actively block automated access) or because the embed won't autoplay.
 const CAMERAS: (EmbeddedCamera | LinkedCamera)[] = [
-  { kind: "embed", title: "Oak Island Pier", source: "YouTube · live", youtubeId: "YtqPZEYtfB4" },
+  {
+    kind: "link",
+    title: "Oak Island Pier",
+    source: "YouTube · opens in new tab",
+    url: "https://www.youtube.com/watch?v=YtqPZEYtfB4",
+    linkLabel: "Watch live",
+  },
   {
     kind: "link",
     title: "Ocean Crest Pier",

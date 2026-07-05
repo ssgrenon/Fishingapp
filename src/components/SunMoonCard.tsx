@@ -67,8 +67,8 @@ export function SunMoonCard({ conditions }: { conditions: Conditions }) {
       <div className="card-line">
         Dusk <b>{formatTime(sun.dusk)}</b>
       </div>
-      <div className="card-note card-note-row">
-        <canvas ref={moonIconRef} width={26} height={26} />
+      <div className="card-note card-note-row card-note-row-lg">
+        <canvas ref={moonIconRef} width={48} height={48} />
         {moon.phaseName} · {Math.round(moon.illumination * 100)}% illuminated
       </div>
     </div>

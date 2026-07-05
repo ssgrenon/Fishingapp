@@ -27,21 +27,21 @@ export async function fetchTide(now) {
   const beginDate = localYyyymmdd(new Date(midnight.getTime() - DAY_MS));
   const endDate = localYyyymmdd(new Date(midnight.getTime() + 2 * DAY_MS));
 
-  const [hourly, hiLo] = await Promise.all([
-    fetchPredictions(NOAA_TIDE_STATION, beginDate, endDate, "h"),
+  const [fine, hiLo] = await Promise.all([
+    fetchPredictions(NOAA_TIDE_STATION, beginDate, endDate, "6"),
     fetchPredictions(NOAA_TIDE_STATION, beginDate, endDate, "hilo"),
   ]);
 
-  const todayHourly = hourly
+  const todayFine = fine
     .map((p) => ({ time: parseGmtTimestamp(p.t), heightFt: Number(p.v) }))
     .filter((p) => p.time >= midnight && p.time < nextMidnight)
     .sort((a, b) => a.time - b.time);
 
   const curvePoints = [];
-  const samples = 9;
+  const samples = 49;
   for (let i = 0; i < samples; i++) {
-    const idx = todayHourly.length > 1 ? Math.round((i / (samples - 1)) * (todayHourly.length - 1)) : 0;
-    curvePoints.push(Math.round((todayHourly[idx]?.heightFt ?? 0) * 10) / 10);
+    const idx = todayFine.length > 1 ? Math.round((i / (samples - 1)) * (todayFine.length - 1)) : 0;
+    curvePoints.push(Math.round((todayFine[idx]?.heightFt ?? 0) * 10) / 10);
   }
 
   const next = hiLo
