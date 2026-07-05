@@ -2,8 +2,19 @@ import { useThemedCanvas, cssVar } from "../lib/canvas";
 import { drawHourBars, drawWindIcon, windDirDegrees } from "../lib/drawings";
 import type { Conditions } from "../lib/types";
 
+const TREND_ARROW: Record<Conditions["pressure"]["trend"], string> = {
+  rising: "↑",
+  falling: "↓",
+  steady: "→",
+};
+const TREND_ARROW_COLOR: Record<Conditions["pressure"]["trend"], string> = {
+  rising: "var(--good)",
+  falling: "var(--critical)",
+  steady: "var(--ink-faint)",
+};
+
 export function WeatherCard({ conditions }: { conditions: Conditions }) {
-  const { weather } = conditions;
+  const { weather, pressure } = conditions;
   const windDirDeg = windDirDegrees(weather.windDirLabel);
 
   const iconRef = useThemedCanvas((ctx, w, h) => drawWindIcon(ctx, w, h, windDirDeg), [windDirDeg]);
@@ -72,6 +83,16 @@ export function WeatherCard({ conditions }: { conditions: Conditions }) {
       </div>
       <div className="card-line">
         Humidity <b>{weather.humidityPct}%</b>
+      </div>
+      <div className="card-line">
+        Pressure{" "}
+        <b>
+          {pressure.current.toFixed(2)} inHg{" "}
+          <span style={{ color: TREND_ARROW_COLOR[pressure.trend] }}>{TREND_ARROW[pressure.trend]}</span>
+        </b>
+      </div>
+      <div className="card-note">
+        {pressure.trendNote[0].toUpperCase() + pressure.trendNote.slice(1)}
       </div>
     </div>
   );

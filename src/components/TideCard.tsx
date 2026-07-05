@@ -5,7 +5,7 @@ import { formatTime, hourOfDay, localMidnightIso } from "../lib/time";
 import type { Conditions } from "../lib/types";
 
 export function TideCard({ conditions }: { conditions: Conditions }) {
-  const { tide, updated } = conditions;
+  const { tide, water, updated } = conditions;
   const midnight = localMidnightIso(updated);
   const nowFraction = Math.max(0, Math.min(1, hourOfDay(updated, midnight) / 24));
 
@@ -20,7 +20,7 @@ export function TideCard({ conditions }: { conditions: Conditions }) {
       <div className="card-head">
         <div className="card-title">
           <canvas ref={iconRef} width={22} height={22} />
-          Tide
+          Tide &amp; Water
         </div>
         <span className="card-sub">NOAA {tide.station}</span>
       </div>
@@ -35,8 +35,20 @@ export function TideCard({ conditions }: { conditions: Conditions }) {
           </div>
         );
       })}
+      <div className="card-line">
+        Water temp <b>{water.tempF}°F</b>
+      </div>
+      <div className="card-line">
+        Clarity <b>{water.clarity}</b>
+      </div>
+      <div className="card-line">
+        Cape Fear discharge <b>{water.riverDischarge}</b>
+      </div>
       <div className="card-note">
         Green ≥ {tide.thresholds.superHighFt.toFixed(1)} ft (super high) · Red ≤ {tide.thresholds.superLowFt.toFixed(1)} ft (super low)
+      </div>
+      <div className="card-note">
+        <span className="tag caution">Runoff</span> &nbsp;{water.note}
       </div>
     </div>
   );
