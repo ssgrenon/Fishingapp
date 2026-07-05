@@ -95,6 +95,11 @@ export interface HourBarItem {
   label: string;
   value: number;
   storm?: boolean;
+  /** Wind direction (degrees the wind blows from) drawn as an arrow above the bar. */
+  windDirDeg?: number;
+  windSpeedMph?: number;
+  /** Optional short text drawn in the fixed band above the bar (e.g. precip inches). */
+  topLabel?: string;
 }
 
 /** Shared hourly bar-chart renderer used for both the wave and rain forecasts. */
@@ -103,10 +108,23 @@ export function drawHourBars(
   w: number,
   h: number,
   items: HourBarItem[],
-  opts: { max: number; colorFor: (value: number) => string; valueLabel: (value: number) => string; boltColor?: string; refLines?: number[] }
+  opts: {
+    max: number;
+    colorFor: (value: number) => string;
+    valueLabel: (value: number) => string;
+    boltColor?: string;
+    refLines?: number[];
+    windArrows?: boolean;
+    arrowColor?: string;
+    topLabelColor?: string;
+  }
 ) {
-  const topPad = opts.boltColor ? 20 : 14;
-  const bottomPad = 14, pad = 4;
+  const pad = 4, bottomPad = 14;
+  // Fixed bands stacked at the top of each column, above the (floating) value label.
+  const boltBand = opts.boltColor ? 11 : 0;
+  const infoBand = opts.windArrows || items.some((it) => it.topLabel) ? 22 : 0;
+  const valueBand = 12;
+  const topPad = boltBand + infoBand + valueBand;
   const slot = (w - pad * 2) / items.length;
   const barW = slot * 0.46;
 
@@ -119,8 +137,12 @@ export function drawHourBars(
     ctx.setLineDash([]);
   }
 
+  const arrowColor = opts.arrowColor ?? cssVar("--ink-soft");
+  const topLabelColor = opts.topLabelColor ?? cssVar("--ink-soft");
+
   items.forEach((item, i) => {
-    const x = pad + slot * i + (slot - barW) / 2;
+    const cx = pad + slot * i + slot / 2;
+    const x = cx - barW / 2;
     const barH = (h - topPad - bottomPad) * (item.value / opts.max);
     const top = h - bottomPad - barH;
     const color = opts.colorFor(item.value);
@@ -137,14 +159,40 @@ export function drawHourBars(
       ctx.globalAlpha = 1;
     }
 
+    // Wind arrow + speed (waves tile).
+    if (opts.windArrows && typeof item.windDirDeg === "number") {
+      const ay = boltBand + 8;
+      ctx.save();
+      ctx.translate(cx, ay);
+      ctx.rotate(((item.windDirDeg + 180) * Math.PI) / 180);
+      ctx.strokeStyle = arrowColor; ctx.fillStyle = arrowColor; ctx.lineWidth = 1.4; ctx.lineCap = "round";
+      ctx.beginPath(); ctx.moveTo(0, 6); ctx.lineTo(0, -6); ctx.stroke();
+      ctx.beginPath(); ctx.moveTo(0, -7); ctx.lineTo(-3.5, -2); ctx.lineTo(3.5, -2); ctx.closePath(); ctx.fill();
+      ctx.restore();
+      if (typeof item.windSpeedMph === "number") {
+        ctx.fillStyle = arrowColor;
+        ctx.font = "600 8.5px " + cssVar("--font-mono");
+        ctx.textAlign = "center";
+        ctx.fillText(String(item.windSpeedMph), cx, boltBand + infoBand - 1);
+      }
+    }
+
+    // Fixed top-band text (e.g. precip inches on the weather tile).
+    if (item.topLabel) {
+      ctx.fillStyle = topLabelColor;
+      ctx.font = "600 8.5px " + cssVar("--font-mono");
+      ctx.textAlign = "center";
+      ctx.fillText(item.topLabel, cx, boltBand + 12);
+    }
+
     ctx.fillStyle = cssVar("--ink-soft");
     ctx.font = "600 9.5px " + cssVar("--font-mono");
     ctx.textAlign = "center";
-    const labelY = Math.max(top - 4, 9);
-    ctx.fillText(opts.valueLabel(item.value), x + barW / 2, labelY);
+    const labelY = Math.max(top - 4, boltBand + infoBand + 9);
+    ctx.fillText(opts.valueLabel(item.value), cx, labelY);
 
     if (item.storm && opts.boltColor) {
-      const bx = x + barW / 2, by = labelY - 12;
+      const bx = cx, by = pad + 5;
       ctx.strokeStyle = opts.boltColor; ctx.fillStyle = opts.boltColor; ctx.lineWidth = 1.4; ctx.lineJoin = "round";
       ctx.beginPath();
       ctx.moveTo(bx + 2, by - 6);
@@ -159,6 +207,11 @@ export function drawHourBars(
   });
 }
 
+export interface SolunarBand {
+  start: number;
+  end: number;
+}
+
 export interface SkyArcOptions {
   domainHours: number;
   sunrise: number;
@@ -166,6 +219,8 @@ export interface SkyArcOptions {
   moonrise: number;
   moonset: number;
   now: number;
+  minors?: SolunarBand[];
+  majors?: SolunarBand[];
 }
 
 export function drawSkyArc(ctx: CanvasRenderingContext2D, w: number, h: number, opts: SkyArcOptions) {
@@ -180,6 +235,22 @@ export function drawSkyArc(ctx: CanvasRenderingContext2D, w: number, h: number, 
 
   ctx.strokeStyle = cssVar("--line"); ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, baseline); ctx.lineTo(w, baseline); ctx.stroke();
+
+  // Solunar feeding windows, as a timeline strip just below the baseline:
+  // light green for minor windows, solid (darker) green for major windows.
+  const stripTop = baseline + 3, stripH = 5;
+  const green = cssVar("--good");
+  const drawBand = (band: SolunarBand, alpha: number) => {
+    const x0 = Math.max(pad, xAt(Math.max(0, band.start)));
+    const x1 = Math.min(w - pad, xAt(Math.min(domainHours, band.end)));
+    if (x1 <= x0) return;
+    ctx.globalAlpha = alpha;
+    ctx.fillStyle = green;
+    ctx.fillRect(x0, stripTop, x1 - x0, stripH);
+    ctx.globalAlpha = 1;
+  };
+  (opts.minors ?? []).forEach((b) => drawBand(b, 0.4));
+  (opts.majors ?? []).forEach((b) => drawBand(b, 1));
 
   ctx.fillStyle = cssVar("--ink-faint");
   ctx.font = "9.5px " + cssVar("--font-mono");

@@ -17,6 +17,7 @@ import { fetchTide } from "./lib/noaaTides.mjs";
 import { fetchWeather } from "./lib/nwsWeather.mjs";
 import { fetchWaves, fetchPressure, fetchWaterTemp } from "./lib/ndbcBuoy.mjs";
 import { fetchMarine } from "./lib/openMeteoMarine.mjs";
+import { fetchHourlyForecast, hourLabel, windowAround } from "./lib/openMeteoForecast.mjs";
 import { fetchWaterClarityProxy } from "./lib/usgsWater.mjs";
 import { computeBiteScore, computeDailyScore } from "./lib/biteScore.mjs";
 import { waveHeightTier } from "./lib/tiers.mjs";
@@ -47,7 +48,8 @@ async function main() {
     { weather: fallback("weather", null), dailyWind: [] }
   );
   const wavesCurrent = await soft("NDBC waves", () => fetchWaves(), { source: "", current: fallback("waves", {}).current });
-  const marine = await soft("Open-Meteo marine", () => fetchMarine(now), { next6h: fallback("waves", {}).next6h ?? [], dailyMaxWaveFt: new Map() });
+  const marine = await soft("Open-Meteo marine", () => fetchMarine(), { hourly: [], dailyMaxWaveFt: new Map() });
+  const forecastHourly = await soft("Open-Meteo forecast", () => fetchHourlyForecast(), []);
   const pressure = await soft("NDBC pressure", () => fetchPressure(), fallback("pressure", null));
   const waterTempF = await fetchWaterTemp();
   const clarity = await soft("USGS water clarity", () => fetchWaterClarityProxy(), {
@@ -56,12 +58,35 @@ async function main() {
     note: "Water clarity proxy temporarily unavailable.",
   });
 
+  // Shared hourly window: 2 hours before to 4 hours after the update time.
+  const forecastWindow = windowAround(forecastHourly, now);
+  const windAt = (time) => forecastWindow.find((f) => f.time.getTime() === time.getTime());
+
+  const wavesWindow = windowAround(marine.hourly, now).map((wp) => {
+    const wind = windAt(wp.time);
+    return {
+      label: hourLabel(wp.time),
+      heightFt: wp.heightFt,
+      windDirLabel: wind?.windDirLabel,
+      windSpeedMph: wind?.windSpeedMph,
+    };
+  });
+
+  const rainWindow = forecastWindow.map((f) => ({
+    label: f.label,
+    pct: f.pct,
+    precipIn: f.precipIn,
+    storm: f.storm,
+  }));
+
   const waves = {
     source: wavesCurrent.source || fallback("waves", {}).source || "NDBC",
     current: wavesCurrent.current,
     thresholds: WAVE_THRESHOLDS,
-    next6h: marine.next6h,
+    next6h: wavesWindow.length ? wavesWindow : fallback("waves", {}).next6h ?? [],
   };
+
+  if (weather && rainWindow.length) weather.rainNext6h = rainWindow;
 
   const weekly = [];
   for (let i = 0; i < 7; i++) {
