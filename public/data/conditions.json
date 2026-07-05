@@ -4,16 +4,62 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-07-05T18:47:10.969Z",
+  "updated": "2026-07-05T22:15:35.079Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
+    "curvePoints": [
+      4.6,
+      4.4,
+      4,
+      3.6,
+      3.1,
+      2.5,
+      1.9,
+      1.4,
+      0.9,
+      0.6,
+      0.4,
+      0.3,
+      0.3,
+      0.5,
+      0.8,
+      1.2,
+      1.7,
+      2.2,
+      2.7,
+      3.2,
+      3.6,
+      3.9,
+      4.1,
+      4.1,
+      4.1,
+      4,
+      3.8,
+      3.5,
+      3.2,
+      2.7,
+      2.3,
+      1.8,
+      1.4,
+      1.1,
+      0.9,
+      0.7,
+      0.7,
+      0.9,
+      1.1,
+      1.4,
+      1.8,
+      2.3,
+      2.8,
+      3.2,
+      3.7,
+      4.1,
+      4.3,
+      4.5,
+      4.6
+    ],
     "next": [
-      {
-        "type": "Low",
-        "time": "2026-07-05T21:44:00.000Z",
-        "heightFt": 0.7
-      },
       {
         "type": "High",
         "time": "2026-07-06T04:06:00.000Z",
@@ -23,6 +69,11 @@
         "type": "Low",
         "time": "2026-07-06T10:22:00.000Z",
         "heightFt": 0.3
+      },
+      {
+        "type": "High",
+        "time": "2026-07-06T16:35:00.000Z",
+        "heightFt": 4.4
       }
     ],
     "thresholds": {
@@ -45,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-07-05T08:24:00.969Z",
-        "end": "2026-07-05T10:24:00.969Z"
+        "start": "2026-07-05T08:24:00.079Z",
+        "end": "2026-07-05T10:24:00.079Z"
       },
       {
-        "start": "2026-07-05T20:42:00.969Z",
-        "end": "2026-07-05T22:42:00.969Z"
+        "start": "2026-07-05T20:42:00.079Z",
+        "end": "2026-07-05T22:42:00.079Z"
       }
     ],
     "minors": [
@@ -69,9 +120,9 @@
   "waves": {
     "source": "NDBC 41013 Frying Pan Shoals",
     "current": {
-      "heightFt": 2,
-      "periodSec": null,
-      "direction": "SE",
+      "heightFt": 2.3,
+      "periodSec": 5,
+      "direction": "S",
       "chop": "Moderate"
     },
     "thresholds": {
@@ -79,30 +130,6 @@
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "12pm",
-        "heightFt": 1.8,
-        "windDirLabel": "S",
-        "windSpeedMph": 9
-      },
-      {
-        "label": "1pm",
-        "heightFt": 1.8,
-        "windDirLabel": "S",
-        "windSpeedMph": 11
-      },
-      {
-        "label": "2pm",
-        "heightFt": 1.8,
-        "windDirLabel": "S",
-        "windSpeedMph": 13
-      },
-      {
-        "label": "3pm",
-        "heightFt": 1.9,
-        "windDirLabel": "S",
-        "windSpeedMph": 13
-      },
       {
         "label": "4pm",
         "heightFt": 1.9,
@@ -113,49 +140,49 @@
         "label": "5pm",
         "heightFt": 2,
         "windDirLabel": "S",
-        "windSpeedMph": 12
+        "windSpeedMph": 13
       },
       {
         "label": "6pm",
         "heightFt": 2.1,
         "windDirLabel": "S",
         "windSpeedMph": 14
+      },
+      {
+        "label": "7pm",
+        "heightFt": 2.2,
+        "windDirLabel": "S",
+        "windSpeedMph": 10
+      },
+      {
+        "label": "8pm",
+        "heightFt": 2.4,
+        "windDirLabel": "SW",
+        "windSpeedMph": 8
+      },
+      {
+        "label": "9pm",
+        "heightFt": 2.5,
+        "windDirLabel": "SW",
+        "windSpeedMph": 8
+      },
+      {
+        "label": "10pm",
+        "heightFt": 2.6,
+        "windDirLabel": "S",
+        "windSpeedMph": 10
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
     "tempF": 84,
-    "conditions": "Sunny",
+    "conditions": "Mostly Clear",
     "windMph": 12,
-    "windGustMph": 7,
+    "windGustMph": 14,
     "windDirLabel": "S",
-    "humidityPct": 80,
+    "humidityPct": 84,
     "rainNext6h": [
-      {
-        "label": "12pm",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "1pm",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "2pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "3pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "4pm",
         "pct": 1,
@@ -170,7 +197,31 @@
       },
       {
         "label": "6pm",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "7pm",
         "pct": 2,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "8pm",
+        "pct": 3,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "9pm",
+        "pct": 3,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "10pm",
+        "pct": 3,
         "precipIn": 0,
         "storm": false
       }
@@ -181,19 +232,19 @@
     }
   },
   "pressure": {
-    "current": 29.98,
+    "current": 29.95,
     "trend": "falling",
-    "trendNote": "falling 0.07 in since yesterday",
+    "trendNote": "falling 0.05 in since yesterday",
     "last24h": [
-      30.05,
-      30.02,
-      29.97,
-      30,
       30,
       29.98,
-      30.01,
       30,
-      29.98
+      29.99,
+      29.99,
+      30,
+      30.01,
+      29.96,
+      29.95
     ]
   },
   "water": {
@@ -203,7 +254,7 @@
     "riverDischarge": "Below normal"
   },
   "biteScore": {
-    "value": 74,
+    "value": 70,
     "verdict": "Fair",
     "headline": "Fair bite window this morning",
     "reasons": [
@@ -220,8 +271,12 @@
         "text": "Wind light, 12 mph S"
       },
       {
+        "tier": "caution",
+        "text": "Waves moderate, 2.3 ft"
+      },
+      {
         "tier": "good",
-        "text": "Outgoing tide"
+        "text": "Incoming tide"
       }
     ]
   },
@@ -229,10 +284,10 @@
     {
       "date": "2026-07-05",
       "day": "Sun",
-      "windMph": 13,
-      "windDir": "S",
+      "windMph": 15,
+      "windDir": "SW",
       "waveFt": 2.2,
-      "score": 67,
+      "score": 64,
       "tier": "caution"
     },
     {
