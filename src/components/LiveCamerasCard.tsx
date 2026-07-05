@@ -12,6 +12,8 @@ interface LinkedCamera extends Camera {
   kind: "link";
   url: string;
   linkLabel: string;
+  photo: string;
+  tag: string;
 }
 
 // Static config, not part of the fetched conditions data — hand-picked public
@@ -26,6 +28,8 @@ const CAMERAS: (EmbeddedCamera | LinkedCamera)[] = [
     source: "YouTube · opens in new tab",
     url: "https://www.youtube.com/watch?v=YtqPZEYtfB4",
     linkLabel: "Watch live",
+    photo: `${import.meta.env.BASE_URL}cams/oak-island-pier.jpg`,
+    tag: "YouTube",
   },
   {
     kind: "link",
@@ -33,24 +37,10 @@ const CAMERAS: (EmbeddedCamera | LinkedCamera)[] = [
     source: "Surfchex · opens in new tab",
     url: "https://www.surfchex.com/cams/oak-island-north-carolina/",
     linkLabel: "Watch live",
+    photo: `${import.meta.env.BASE_URL}cams/ocean-crest-pier.jpg`,
+    tag: "Surfchex",
   },
 ];
-
-function PierSilhouette() {
-  return (
-    <svg viewBox="0 0 440 247" preserveAspectRatio="none" aria-hidden="true">
-      <line x1="0" y1="172" x2="440" y2="172" stroke="rgba(230,238,240,0.16)" strokeWidth="1" />
-      <g stroke="rgba(20,30,34,0.5)" strokeWidth="5" strokeLinecap="round">
-        <line x1="70" y1="172" x2="60" y2="235" />
-        <line x1="150" y1="172" x2="146" y2="235" />
-        <line x1="230" y1="172" x2="230" y2="235" />
-        <line x1="310" y1="172" x2="314" y2="235" />
-        <line x1="390" y1="172" x2="398" y2="235" />
-      </g>
-      <rect x="30" y="163" width="380" height="11" rx="2" fill="rgba(20,30,34,0.55)" />
-    </svg>
-  );
-}
 
 export function LiveCamerasCard() {
   return (
@@ -84,11 +74,12 @@ export function LiveCamerasCard() {
               href={cam.url}
               target="_blank"
               rel="noreferrer noopener"
-              aria-label={`${cam.title} live camera on Surfchex, opens in a new tab`}
+              aria-label={`${cam.title} live camera on ${cam.tag}, opens in a new tab`}
             >
               <div className="cam-frame linkout">
-                <PierSilhouette />
-                <span className="cam-open-tag">Surfchex ↗</span>
+                <img className="cam-bg" src={cam.photo} alt="" />
+                <div className="cam-scrim" aria-hidden="true" />
+                <span className="cam-open-tag">{cam.tag} ↗</span>
                 <span className="cam-open-btn">
                   <svg viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14zm5 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z" />
