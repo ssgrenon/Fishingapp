@@ -1,5 +1,5 @@
-import { useThemedCanvas } from "../lib/canvas";
-import { drawHourBars, drawWaveIcon } from "../lib/drawings";
+import { useThemedCanvas, cssVar } from "../lib/canvas";
+import { drawHourBars, drawWaveIcon, windDirDegrees } from "../lib/drawings";
 import { tierResolvedColor, tierVarString, waveHeightTier } from "../lib/thresholds";
 import type { Conditions } from "../lib/types";
 
@@ -14,12 +14,19 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
         ctx,
         w,
         h,
-        waves.next6h.map((p) => ({ label: p.label, value: p.heightFt ?? 0 })),
+        waves.next6h.map((p) => ({
+          label: p.label,
+          value: p.heightFt ?? 0,
+          windDirDeg: p.windDirLabel != null ? windDirDegrees(p.windDirLabel) : undefined,
+          windSpeedMph: p.windSpeedMph,
+        })),
         {
           max: 4,
           colorFor: (v) => tierResolvedColor(waveHeightTier(v, calmMaxFt, moderateMaxFt)),
           valueLabel: (v) => v.toFixed(1),
           refLines: [calmMaxFt, moderateMaxFt],
+          windArrows: true,
+          arrowColor: cssVar("--accent"),
         }
       ),
     [waves.next6h, calmMaxFt, moderateMaxFt]
@@ -38,15 +45,19 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
       </div>
       <div className="forecast-block">
         <div className="forecast-label">
-          Next 6 hours <span className="card-sub">Open-Meteo Marine</span>
+          Waves &amp; wind · −2h to +4h <span className="card-sub">Open-Meteo</span>
         </div>
-        <canvas ref={forecastRef} width={230} height={70} style={{ width: "100%", height: 70, display: "block" }} />
+        <canvas ref={forecastRef} width={230} height={96} style={{ width: "100%", height: 96, display: "block" }} />
         <div className="forecast-hours">
           {waves.next6h.map((p) => (
             <span key={p.label}>{p.label}</span>
           ))}
         </div>
         <div className="forecast-legend">
+          <span>
+            <span className="dot" style={{ background: "var(--accent)" }} />
+            ↑ wind dir · mph
+          </span>
           <span>
             <span className="dot" style={{ background: "var(--good)" }} />
             Calm &lt; {calmMaxFt.toFixed(1)}

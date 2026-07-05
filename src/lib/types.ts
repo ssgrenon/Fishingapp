@@ -48,6 +48,11 @@ export interface HourlyPoint {
   heightFt?: number;
   pct?: number;
   storm?: boolean;
+  /** Wind direction the wind is blowing from (8-point compass), for the waves tile arrows. */
+  windDirLabel?: string;
+  windSpeedMph?: number;
+  /** Projected precipitation for the hour, in inches, for the weather tile labels. */
+  precipIn?: number;
 }
 
 export interface Waves {

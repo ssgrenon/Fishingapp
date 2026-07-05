@@ -34,7 +34,8 @@ hand-edited file — update it directly whenever you hear of a new report.
 | Sun / moon / solunar | Computed locally with `suncalc` — no API |
 | Waves (current) | NDBC buoy `41013` (Frying Pan Shoals) realtime2 feed |
 | Waves (6h / 7-day forecast) | Open-Meteo Marine API |
-| Weather, rain chance, thunderstorm timing | NWS `api.weather.gov` |
+| Hourly wind (waves tile arrows) + rain chance / precip inches (weather tile) | Open-Meteo Forecast API |
+| Current weather, thunderstorm timing | NWS `api.weather.gov` |
 | Pressure (current + 24h trend) | NDBC buoy `41013` |
 | Water temp | NDBC buoy `41013` |
 | Water clarity (estimate) | USGS discharge gauge on the Cape Fear River, used as a rough proxy — no direct clarity API exists |

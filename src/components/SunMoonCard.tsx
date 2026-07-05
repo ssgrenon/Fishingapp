@@ -4,7 +4,7 @@ import { formatTime, hourOfDay, localMidnightIso } from "../lib/time";
 import type { Conditions } from "../lib/types";
 
 export function SunMoonCard({ conditions }: { conditions: Conditions }) {
-  const { sun, moon, updated } = conditions;
+  const { sun, moon, solunar, updated } = conditions;
   const midnight = localMidnightIso(updated);
 
   const sunrise = hourOfDay(sun.sunrise, midnight);
@@ -14,11 +14,18 @@ export function SunMoonCard({ conditions }: { conditions: Conditions }) {
   const now = hourOfDay(updated, midnight);
   const domainHours = Math.min(30, Math.max(24, Math.ceil(Math.max(sunset, moonset)) + 1));
 
+  const toBand = (win: { start: string; end: string }) => ({
+    start: hourOfDay(win.start, midnight),
+    end: hourOfDay(win.end, midnight),
+  });
+  const minors = solunar.minors.map(toBand);
+  const majors = solunar.majors.map(toBand);
+
   const sunIconRef = useThemedCanvas(drawSunIcon, []);
   const moonIconRef = useThemedCanvas((ctx, w, h) => drawMoonIcon(ctx, w, h, moon.illumination), [moon.illumination]);
   const arcRef = useThemedCanvas(
-    (ctx, w, h) => drawSkyArc(ctx, w, h, { domainHours, sunrise, sunset, moonrise, moonset, now }),
-    [domainHours, sunrise, sunset, moonrise, moonset, now]
+    (ctx, w, h) => drawSkyArc(ctx, w, h, { domainHours, sunrise, sunset, moonrise, moonset, now, minors, majors }),
+    [domainHours, sunrise, sunset, moonrise, moonset, now, solunar]
   );
 
   return (
@@ -40,6 +47,14 @@ export function SunMoonCard({ conditions }: { conditions: Conditions }) {
           <span>
             <span className="dot" style={{ background: "var(--ink-soft)" }} />
             Moon
+          </span>
+          <span>
+            <span className="dot" style={{ background: "var(--good)", opacity: 0.4 }} />
+            Minor
+          </span>
+          <span>
+            <span className="dot" style={{ background: "var(--good)" }} />
+            Major feed
           </span>
           <span style={{ marginLeft: "auto", fontFamily: "var(--font-mono)" }}>
             Now <b>{formatTime(updated)}</b>

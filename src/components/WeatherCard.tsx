@@ -13,12 +13,18 @@ export function WeatherCard({ conditions }: { conditions: Conditions }) {
         ctx,
         w,
         h,
-        weather.rainNext6h.map((p) => ({ label: p.label, value: p.pct ?? 0, storm: p.storm })),
+        weather.rainNext6h.map((p) => ({
+          label: p.label,
+          value: p.pct ?? 0,
+          storm: p.storm,
+          topLabel: p.precipIn != null ? `${p.precipIn.toFixed(2)}"` : undefined,
+        })),
         {
           max: 100,
           colorFor: () => cssVar("--ink-soft"),
           valueLabel: (v) => `${v}%`,
           boltColor: cssVar("--critical"),
+          topLabelColor: cssVar("--accent-ink"),
         }
       ),
     [weather.rainNext6h]
@@ -35,13 +41,17 @@ export function WeatherCard({ conditions }: { conditions: Conditions }) {
       </div>
       <div className="forecast-block">
         <div className="forecast-label">
-          Rain chance · next 6h <span className="card-sub">NWS hourly</span>
+          Rain chance &amp; precip · −2h to +4h <span className="card-sub">Open-Meteo</span>
         </div>
-        <canvas ref={rainRef} width={230} height={70} style={{ width: "100%", height: 70, display: "block" }} />
+        <canvas ref={rainRef} width={230} height={96} style={{ width: "100%", height: 96, display: "block" }} />
         <div className="forecast-hours">
           {weather.rainNext6h.map((p) => (
             <span key={p.label}>{p.label}</span>
           ))}
+        </div>
+        <div className="forecast-legend">
+          <span style={{ color: "var(--accent-ink)" }}>Top: projected rainfall (in)</span>
+          <span>Bars: chance of rain (%)</span>
         </div>
         {weather.stormRisk.present && (
           <div className="storm-alert caution">
