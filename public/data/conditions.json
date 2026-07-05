@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-07-04T22:40:42.727Z",
+  "updated": "2026-07-05T02:18:52.374Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -56,12 +56,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-07-04T07:42:00.727Z",
-        "end": "2026-07-04T09:42:00.727Z"
+        "start": "2026-07-04T07:42:00.374Z",
+        "end": "2026-07-04T09:42:00.374Z"
       },
       {
-        "start": "2026-07-04T20:00:00.727Z",
-        "end": "2026-07-04T22:00:00.727Z"
+        "start": "2026-07-04T20:00:00.374Z",
+        "end": "2026-07-04T22:00:00.374Z"
       }
     ],
     "minors": [
@@ -80,10 +80,10 @@
   "waves": {
     "source": "NDBC 41013 Frying Pan Shoals",
     "current": {
-      "heightFt": null,
-      "periodSec": null,
-      "direction": null,
-      "chop": "Choppy"
+      "heightFt": 1.6,
+      "periodSec": 8,
+      "direction": "SE",
+      "chop": "Light"
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -91,60 +91,40 @@
     },
     "next6h": [
       {
-        "label": "7pm",
-        "heightFt": 1.6
-      },
-      {
-        "label": "8pm",
-        "heightFt": 1.7
-      },
-      {
-        "label": "9pm",
-        "heightFt": 1.8
-      },
-      {
-        "label": "10pm",
-        "heightFt": 1.8
-      },
-      {
         "label": "11pm",
         "heightFt": 1.9
       },
       {
         "label": "12am",
         "heightFt": 2
+      },
+      {
+        "label": "1am",
+        "heightFt": 2
+      },
+      {
+        "label": "2am",
+        "heightFt": 2
+      },
+      {
+        "label": "3am",
+        "heightFt": 2
+      },
+      {
+        "label": "4am",
+        "heightFt": 2
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 84,
-    "conditions": "Partly Cloudy",
+    "tempF": 82,
+    "conditions": "Mostly Clear",
     "windMph": 10,
     "windGustMph": 10,
     "windDirLabel": "S",
-    "humidityPct": 76,
+    "humidityPct": 80,
     "rainNext6h": [
-      {
-        "label": "6pm",
-        "pct": 0,
-        "storm": false
-      },
-      {
-        "label": "7pm",
-        "pct": 0,
-        "storm": false
-      },
-      {
-        "label": "8pm",
-        "pct": 0,
-        "storm": false
-      },
-      {
-        "label": "9pm",
-        "pct": 0,
-        "storm": false
-      },
       {
         "label": "10pm",
         "pct": 0,
@@ -152,6 +132,26 @@
       },
       {
         "label": "11pm",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "12am",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "1am",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "2am",
+        "pct": 0,
+        "storm": false
+      },
+      {
+        "label": "3am",
         "pct": 0,
         "storm": false
       }
@@ -164,16 +164,16 @@
   "pressure": {
     "current": 29.99,
     "trend": "falling",
-    "trendNote": "falling 0.07 in since yesterday",
+    "trendNote": "falling 0.08 in since yesterday",
     "last24h": [
-      30.06,
-      30.06,
-      30.08,
+      30.07,
+      30.07,
       30.04,
       30.04,
-      30.08,
+      30.07,
       30.07,
       30.03,
+      29.99,
       29.99
     ]
   },
@@ -221,8 +221,8 @@
       "day": "Sun",
       "windMph": 13,
       "windDir": "S",
-      "waveFt": 2.3,
-      "score": 66,
+      "waveFt": 2.2,
+      "score": 68,
       "tier": "caution"
     },
     {
@@ -230,8 +230,8 @@
       "day": "Mon",
       "windMph": 15,
       "windDir": "SW",
-      "waveFt": 3.3,
-      "score": 48,
+      "waveFt": 2.9,
+      "score": 54,
       "tier": "caution"
     },
     {
@@ -239,17 +239,17 @@
       "day": "Tue",
       "windMph": 14,
       "windDir": "SW",
-      "waveFt": 3.6,
-      "score": 44,
-      "tier": "critical"
+      "waveFt": 3.4,
+      "score": 47,
+      "tier": "caution"
     },
     {
       "date": "2026-07-08",
       "day": "Wed",
       "windMph": 9,
       "windDir": "SW",
-      "waveFt": 3.2,
-      "score": 53,
+      "waveFt": 3.4,
+      "score": 50,
       "tier": "caution"
     },
     {
@@ -257,18 +257,18 @@
       "day": "Thu",
       "windMph": 12,
       "windDir": "SW",
-      "waveFt": 2,
-      "score": 70,
-      "tier": "good"
+      "waveFt": 3.4,
+      "score": 50,
+      "tier": "caution"
     },
     {
       "date": "2026-07-10",
       "day": "Fri",
       "windMph": 17,
       "windDir": "SW",
-      "waveFt": 3,
-      "score": 50,
-      "tier": "caution"
+      "waveFt": 3.9,
+      "score": 35,
+      "tier": "critical"
     }
   ]
 }
