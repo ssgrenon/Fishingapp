@@ -62,14 +62,14 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
         </div>
       </div>
       <div className="card-figure" style={{ color: figureColor }}>
-        {waves.current.heightFt.toFixed(1)}
+        {waves.current.heightFt != null ? waves.current.heightFt.toFixed(1) : "—"}
         <span className="unit">ft</span>
       </div>
       <div className="card-line">
-        Period <b>{waves.current.periodSec} s</b>
+        Period <b>{waves.current.periodSec != null ? `${waves.current.periodSec} s` : "—"}</b>
       </div>
       <div className="card-line">
-        Swell direction <b>{waves.current.direction}</b>
+        Swell direction <b>{waves.current.direction ?? "—"}</b>
       </div>
       <div className="card-line">
         Chop <b>{waves.current.chop}</b>

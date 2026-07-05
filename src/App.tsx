@@ -17,7 +17,7 @@ export default function App() {
   if (loading) {
     return <div className="state-message">Loading conditions…</div>;
   }
-  if (error || !conditions || !reports) {
+  if (error || !conditions || !reports || !conditions.tide || !conditions.weather || !conditions.pressure) {
     return (
       <div className="state-message">
         Couldn't load conditions data ({error ?? "unknown error"}). Try refreshing, or check that
