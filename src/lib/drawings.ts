@@ -290,20 +290,14 @@ export function drawTideSolunarChart(ctx: CanvasRenderingContext2D, w: number, h
     ctx.setLineDash([]);
   };
 
-  const moonArchH = h * 0.42, sunArchH = h * 0.6;
+  const moonArchH = h * 0.42;
   drawArc(moonrise, moonset, moonArchH, cssVar("--ink-soft"), true);
-  drawArc(sunrise, sunset, sunArchH, cssVar("--accent"), false);
 
   const nowX = xAt(now);
   ctx.strokeStyle = cssVar("--ink-faint"); ctx.lineWidth = 1; ctx.setLineDash([2, 3]);
   ctx.beginPath(); ctx.moveTo(nowX, topPad); ctx.lineTo(nowX, baseline); ctx.stroke();
   ctx.setLineDash([]);
 
-  if (now >= sunrise && now <= sunset) {
-    const sy = archY(now, sunrise, sunset, sunArchH);
-    ctx.fillStyle = cssVar("--accent");
-    ctx.beginPath(); ctx.arc(nowX, sy, 4, 0, Math.PI * 2); ctx.fill();
-  }
   if (now >= moonrise && now <= moonset) {
     const my = archY(now, moonrise, moonset, moonArchH);
     ctx.fillStyle = cssVar("--ink-soft");

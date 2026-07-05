@@ -63,10 +63,6 @@ export function TideSolunarCard({ conditions }: { conditions: Conditions }) {
             Tide
           </span>
           <span>
-            <span className="dot" style={{ background: "var(--accent)" }} />
-            Sun
-          </span>
-          <span>
             <span className="dot" style={{ background: "var(--ink-soft)" }} />
             Moon
           </span>
