@@ -12,7 +12,6 @@ export interface TideEvent {
 
 export interface Tide {
   station: string;
-  curvePoints: number[];
   next: TideEvent[];
   thresholds: { superHighFt: number; superLowFt: number };
 }
