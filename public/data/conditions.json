@@ -4,19 +4,59 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-07-05T16:09:37.958Z",
+  "updated": "2026-07-05T18:47:10.969Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
     "curvePoints": [
+      4.6,
+      4.4,
+      4,
+      3.6,
+      3.1,
+      2.5,
+      1.9,
+      1.4,
+      0.9,
+      0.6,
+      0.4,
+      0.3,
+      0.3,
+      0.5,
+      0.8,
+      1.2,
+      1.7,
+      2.2,
+      2.7,
+      3.2,
+      3.6,
+      3.9,
       4.1,
-      1,
-      0.7,
-      3.5,
+      4.1,
+      4.1,
+      4,
       3.8,
+      3.5,
+      3.2,
+      2.7,
       2.3,
+      1.8,
+      1.4,
+      1.1,
+      0.9,
       0.7,
+      0.7,
+      0.9,
+      1.1,
+      1.4,
+      1.8,
+      2.3,
       2.8,
+      3.2,
+      3.7,
+      4.1,
+      4.3,
+      4.5,
       4.6
     ],
     "next": [
@@ -56,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-07-05T08:24:00.958Z",
-        "end": "2026-07-05T10:24:00.958Z"
+        "start": "2026-07-05T08:24:00.969Z",
+        "end": "2026-07-05T10:24:00.969Z"
       },
       {
-        "start": "2026-07-05T20:42:00.958Z",
-        "end": "2026-07-05T22:42:00.958Z"
+        "start": "2026-07-05T20:42:00.969Z",
+        "end": "2026-07-05T22:42:00.969Z"
       }
     ],
     "minors": [
@@ -80,10 +120,10 @@
   "waves": {
     "source": "NDBC 41013 Frying Pan Shoals",
     "current": {
-      "heightFt": null,
+      "heightFt": 2,
       "periodSec": null,
-      "direction": null,
-      "chop": "Choppy"
+      "direction": "SE",
+      "chop": "Moderate"
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -91,22 +131,10 @@
     },
     "next6h": [
       {
-        "label": "10am",
-        "heightFt": 1.9,
-        "windDirLabel": "S",
-        "windSpeedMph": 9
-      },
-      {
-        "label": "11am",
-        "heightFt": 1.8,
-        "windDirLabel": "S",
-        "windSpeedMph": 10
-      },
-      {
         "label": "12pm",
         "heightFt": 1.8,
         "windDirLabel": "S",
-        "windSpeedMph": 11
+        "windSpeedMph": 9
       },
       {
         "label": "1pm",
@@ -118,43 +146,43 @@
         "label": "2pm",
         "heightFt": 1.8,
         "windDirLabel": "S",
-        "windSpeedMph": 12
+        "windSpeedMph": 13
       },
       {
         "label": "3pm",
         "heightFt": 1.9,
         "windDirLabel": "S",
-        "windSpeedMph": 11
+        "windSpeedMph": 13
       },
       {
         "label": "4pm",
         "heightFt": 1.9,
         "windDirLabel": "S",
         "windSpeedMph": 12
+      },
+      {
+        "label": "5pm",
+        "heightFt": 2,
+        "windDirLabel": "S",
+        "windSpeedMph": 12
+      },
+      {
+        "label": "6pm",
+        "heightFt": 2.1,
+        "windDirLabel": "S",
+        "windSpeedMph": 14
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 83,
-    "conditions": "Mostly Sunny",
-    "windMph": 9,
-    "windGustMph": 13,
+    "tempF": 84,
+    "conditions": "Sunny",
+    "windMph": 12,
+    "windGustMph": 7,
     "windDirLabel": "S",
-    "humidityPct": 84,
+    "humidityPct": 80,
     "rainNext6h": [
-      {
-        "label": "10am",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "11am",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "12pm",
         "pct": 0,
@@ -175,12 +203,24 @@
       },
       {
         "label": "3pm",
-        "pct": 2,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "4pm",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "5pm",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "6pm",
         "pct": 2,
         "precipIn": 0,
         "storm": false
@@ -192,23 +232,23 @@
     }
   },
   "pressure": {
-    "current": 30,
+    "current": 29.98,
     "trend": "falling",
-    "trendNote": "falling 0.08 in since yesterday",
+    "trendNote": "falling 0.07 in since yesterday",
     "last24h": [
-      30.08,
-      30.04,
-      30.01,
+      30.05,
+      30.02,
       29.97,
       30,
-      29.99,
-      29.99,
       30,
-      30
+      29.98,
+      30.01,
+      30,
+      29.98
     ]
   },
   "water": {
-    "tempF": 82,
+    "tempF": 83,
     "clarity": "Good, relatively clear",
     "note": "Cape Fear discharge below normal — typically clearer nearshore water",
     "riverDischarge": "Below normal"
@@ -228,7 +268,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 9 mph S"
+        "text": "Wind light, 12 mph S"
       },
       {
         "tier": "good",
@@ -258,10 +298,10 @@
     {
       "date": "2026-07-07",
       "day": "Tue",
-      "windMph": 15,
+      "windMph": 16,
       "windDir": "SW",
       "waveFt": 3.7,
-      "score": 41,
+      "score": 39,
       "tier": "critical"
     },
     {
@@ -276,10 +316,10 @@
     {
       "date": "2026-07-09",
       "day": "Thu",
-      "windMph": 14,
+      "windMph": 16,
       "windDir": "SW",
       "waveFt": 3.7,
-      "score": 43,
+      "score": 40,
       "tier": "critical"
     },
     {
