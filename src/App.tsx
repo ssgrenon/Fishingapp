@@ -1,7 +1,6 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
-import { TideCard } from "./components/TideCard";
-import { SunMoonCard } from "./components/SunMoonCard";
+import { TideSolunarCard } from "./components/TideSolunarCard";
 import { WavesCard } from "./components/WavesCard";
 import { WeatherCard } from "./components/WeatherCard";
 import { LiveCamerasCard } from "./components/LiveCamerasCard";
@@ -34,8 +33,7 @@ export default function App() {
       <Hero conditions={conditions} />
       <h2 className="grid-heading">Right now</h2>
       <div className="instruments">
-        <TideCard conditions={conditions} />
-        <SunMoonCard conditions={conditions} />
+        <TideSolunarCard conditions={conditions} />
         <WavesCard conditions={conditions} />
         <WeatherCard conditions={conditions} />
       </div>

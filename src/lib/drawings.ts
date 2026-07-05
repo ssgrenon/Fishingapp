@@ -70,36 +70,6 @@ function traceSmoothPath(ctx: CanvasRenderingContext2D, pts: { x: number; y: num
   }
 }
 
-export function drawTideCurve(ctx: CanvasRenderingContext2D, w: number, h: number, points: number[], nowFraction: number) {
-  const max = 4.6, min = 0, pad = 6;
-  const xAt = (i: number) => pad + (w - pad * 2) * (i / (points.length - 1));
-  const yAt = (v: number) => h - pad - (h - pad * 2) * ((v - min) / (max - min));
-  const path = points.map((v, i) => ({ x: xAt(i), y: yAt(v) }));
-
-  const grad = ctx.createLinearGradient(0, 0, 0, h);
-  grad.addColorStop(0, cssVar("--accent-soft"));
-  grad.addColorStop(1, "rgba(0,0,0,0)");
-  ctx.beginPath();
-  traceSmoothPath(ctx, path);
-  ctx.lineTo(xAt(points.length - 1), h); ctx.lineTo(xAt(0), h); ctx.closePath();
-  ctx.fillStyle = grad; ctx.fill();
-
-  ctx.beginPath();
-  traceSmoothPath(ctx, path);
-  ctx.strokeStyle = cssVar("--accent"); ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.stroke();
-
-  const nowIdx = nowFraction * (points.length - 1);
-  const lowerIdx = Math.max(0, Math.min(points.length - 2, Math.floor(nowIdx)));
-  const frac = nowIdx - lowerIdx;
-  const nowValue = points[lowerIdx] + (points[lowerIdx + 1] - points[lowerIdx]) * frac;
-  const nx = xAt(nowIdx), ny = yAt(nowValue);
-  ctx.strokeStyle = cssVar("--ink-faint"); ctx.setLineDash([2, 3]); ctx.lineWidth = 1;
-  ctx.beginPath(); ctx.moveTo(nx, pad); ctx.lineTo(nx, h - pad); ctx.stroke();
-  ctx.setLineDash([]);
-  ctx.fillStyle = cssVar("--ink");
-  ctx.beginPath(); ctx.arc(nx, ny, 3, 0, Math.PI * 2); ctx.fill();
-}
-
 export function drawSparkline(ctx: CanvasRenderingContext2D, w: number, h: number, points: number[], color?: string) {
   const max = Math.max(...points), min = Math.min(...points), pad = 4;
   const xAt = (i: number) => pad + (w - pad * 2) * (i / (points.length - 1));
@@ -233,7 +203,7 @@ export interface SolunarBand {
   end: number;
 }
 
-export interface SkyArcOptions {
+export interface TideSolunarChartOptions {
   domainHours: number;
   sunrise: number;
   sunset: number;
@@ -242,17 +212,37 @@ export interface SkyArcOptions {
   now: number;
   minors?: SolunarBand[];
   majors?: SolunarBand[];
+  /** Hourly tide heights (ft) for hours 0..domainHours since local midnight, one per hour. */
+  tidePoints: number[];
+  tideMaxFt: number;
+  tideMinFt: number;
 }
 
-export function drawSkyArc(ctx: CanvasRenderingContext2D, w: number, h: number, opts: SkyArcOptions) {
-  const { domainHours, sunrise, sunset, moonrise, moonset, now } = opts;
+export function drawTideSolunarChart(ctx: CanvasRenderingContext2D, w: number, h: number, opts: TideSolunarChartOptions) {
+  const { domainHours, sunrise, sunset, moonrise, moonset, now, tidePoints, tideMaxFt, tideMinFt } = opts;
   const pad = 4, topPad = 8, bottomPad = 16;
   const baseline = h - bottomPad;
+  const tideTop = topPad + 6, tideBottom = baseline - 6;
   const xAt = (hr: number) => pad + (w - pad * 2) * (hr / domainHours);
+  const tideYAt = (ft: number) => tideBottom - (tideBottom - tideTop) * ((ft - tideMinFt) / (tideMaxFt - tideMinFt));
 
   ctx.fillStyle = cssVar("--bg-recessed");
   ctx.fillRect(0, 0, xAt(sunrise), h);
   ctx.fillRect(xAt(sunset), 0, w - xAt(sunset), h);
+
+  // Tide curve: hourly-sampled heights (see hourlyTideSeries) traced as a smooth
+  // curve and filled, in a distinct color from the sun/moon arcs.
+  const tidePath = tidePoints.map((ft, i) => ({ x: xAt(i), y: tideYAt(ft) }));
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0, cssVar("--tide-soft"));
+  grad.addColorStop(1, "rgba(0,0,0,0)");
+  ctx.beginPath();
+  traceSmoothPath(ctx, tidePath);
+  ctx.lineTo(xAt(tidePoints.length - 1), baseline); ctx.lineTo(xAt(0), baseline); ctx.closePath();
+  ctx.fillStyle = grad; ctx.fill();
+  ctx.beginPath();
+  traceSmoothPath(ctx, tidePath);
+  ctx.strokeStyle = cssVar("--tide"); ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.stroke();
 
   ctx.strokeStyle = cssVar("--line"); ctx.lineWidth = 1;
   ctx.beginPath(); ctx.moveTo(0, baseline); ctx.lineTo(w, baseline); ctx.stroke();
@@ -300,24 +290,26 @@ export function drawSkyArc(ctx: CanvasRenderingContext2D, w: number, h: number, 
     ctx.setLineDash([]);
   };
 
-  const moonArchH = h * 0.42, sunArchH = h * 0.6;
+  const moonArchH = h * 0.42;
   drawArc(moonrise, moonset, moonArchH, cssVar("--ink-soft"), true);
-  drawArc(sunrise, sunset, sunArchH, cssVar("--accent"), false);
 
   const nowX = xAt(now);
   ctx.strokeStyle = cssVar("--ink-faint"); ctx.lineWidth = 1; ctx.setLineDash([2, 3]);
   ctx.beginPath(); ctx.moveTo(nowX, topPad); ctx.lineTo(nowX, baseline); ctx.stroke();
   ctx.setLineDash([]);
 
-  if (now >= sunrise && now <= sunset) {
-    const sy = archY(now, sunrise, sunset, sunArchH);
-    ctx.fillStyle = cssVar("--accent");
-    ctx.beginPath(); ctx.arc(nowX, sy, 4, 0, Math.PI * 2); ctx.fill();
-  }
   if (now >= moonrise && now <= moonset) {
     const my = archY(now, moonrise, moonset, moonArchH);
     ctx.fillStyle = cssVar("--ink-soft");
     ctx.beginPath(); ctx.arc(nowX, my, 3.5, 0, Math.PI * 2); ctx.fill();
+  }
+  if (now >= 0 && now <= domainHours) {
+    const nowIdx = Math.max(0, Math.min(tidePoints.length - 1, now));
+    const lowerIdx = Math.max(0, Math.min(tidePoints.length - 2, Math.floor(nowIdx)));
+    const frac = nowIdx - lowerIdx;
+    const nowValue = tidePoints[lowerIdx] + (tidePoints[lowerIdx + 1] - tidePoints[lowerIdx]) * frac;
+    ctx.fillStyle = cssVar("--tide");
+    ctx.beginPath(); ctx.arc(nowX, tideYAt(nowValue), 3, 0, Math.PI * 2); ctx.fill();
   }
 }
 
