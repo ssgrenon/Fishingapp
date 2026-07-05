@@ -50,21 +50,42 @@ export function drawGauge(ctx: CanvasRenderingContext2D, w: number, h: number, v
   ctx.fillText("BITE SCORE / 100", cx, cy + 26);
 }
 
+/** Traces a Catmull-Rom spline through `pts` so the curve reads as smooth rather than segmented. */
+function traceSmoothPath(ctx: CanvasRenderingContext2D, pts: { x: number; y: number }[]) {
+  if (pts.length < 3) {
+    pts.forEach((p, i) => { if (i === 0) ctx.moveTo(p.x, p.y); else ctx.lineTo(p.x, p.y); });
+    return;
+  }
+  ctx.moveTo(pts[0].x, pts[0].y);
+  for (let i = 0; i < pts.length - 1; i++) {
+    const p0 = pts[i === 0 ? 0 : i - 1];
+    const p1 = pts[i];
+    const p2 = pts[i + 1];
+    const p3 = pts[i + 2 < pts.length ? i + 2 : pts.length - 1];
+    const c1x = p1.x + (p2.x - p0.x) / 6;
+    const c1y = p1.y + (p2.y - p0.y) / 6;
+    const c2x = p2.x - (p3.x - p1.x) / 6;
+    const c2y = p2.y - (p3.y - p1.y) / 6;
+    ctx.bezierCurveTo(c1x, c1y, c2x, c2y, p2.x, p2.y);
+  }
+}
+
 export function drawTideCurve(ctx: CanvasRenderingContext2D, w: number, h: number, points: number[], nowFraction: number) {
   const max = 4.6, min = 0, pad = 6;
   const xAt = (i: number) => pad + (w - pad * 2) * (i / (points.length - 1));
   const yAt = (v: number) => h - pad - (h - pad * 2) * ((v - min) / (max - min));
+  const path = points.map((v, i) => ({ x: xAt(i), y: yAt(v) }));
 
   const grad = ctx.createLinearGradient(0, 0, 0, h);
   grad.addColorStop(0, cssVar("--accent-soft"));
   grad.addColorStop(1, "rgba(0,0,0,0)");
   ctx.beginPath();
-  points.forEach((v, i) => { const x = xAt(i), y = yAt(v); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+  traceSmoothPath(ctx, path);
   ctx.lineTo(xAt(points.length - 1), h); ctx.lineTo(xAt(0), h); ctx.closePath();
   ctx.fillStyle = grad; ctx.fill();
 
   ctx.beginPath();
-  points.forEach((v, i) => { const x = xAt(i), y = yAt(v); if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y); });
+  traceSmoothPath(ctx, path);
   ctx.strokeStyle = cssVar("--accent"); ctx.lineWidth = 2; ctx.lineJoin = "round"; ctx.stroke();
 
   const nowIdx = nowFraction * (points.length - 1);
