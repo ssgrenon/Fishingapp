@@ -545,12 +545,12 @@ header.station {
 .outlook-head p { margin: 0; font-size: 12.5px; color: var(--ink-soft); }
 .outlook-scroll { overflow-x: auto; }
 .outlook-table {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(122px, 1fr));
+  display: flex;
   gap: 10px;
   min-width: 900px;
 }
 .day-col {
+  flex: 1 1 122px;
   border: 1px solid var(--line);
   border-radius: 4px;
   padding: 12px 10px 14px;
@@ -558,6 +558,36 @@ header.station {
   background: var(--bg-recessed);
 }
 .day-col.today { border-color: var(--accent); }
+.wind-heat-strip { border-radius: 2px; display: block; margin: 0 0 10px; }
+.hour-ruler {
+  flex: 0 0 34px;
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  padding: 12px 4px 14px;
+  border: 1px solid transparent;
+  background: var(--bg-elevated);
+}
+.hour-ruler-strip { position: relative; }
+.hour-ruler-strip span {
+  position: absolute;
+  left: 0;
+  transform: translateY(-50%);
+  font-family: var(--font-mono);
+  font-size: 9px;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+.wind-legend {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-family: var(--font-mono);
+  font-size: 10.5px;
+  color: var(--ink-faint);
+}
+.wind-legend-bar { flex: 0 0 120px; height: 8px; border-radius: 4px; }
 .day-name {
   font-family: var(--font-body);
   font-size: 10.5px;

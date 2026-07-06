@@ -43,3 +43,9 @@ export function localDateOffset(refDate, days) {
   const p = wallClockParts(shifted);
   return `${p.year}-${p.month}-${p.day}`;
 }
+
+/** Local calendar date (YYYY-MM-DD) and hour-of-day (0-23) for refDate, in TIME_ZONE. */
+export function localDateAndHour(refDate) {
+  const p = wallClockParts(refDate);
+  return { date: `${p.year}-${p.month}-${p.day}`, hour: +p.hour };
+}

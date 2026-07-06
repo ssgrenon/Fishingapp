@@ -415,6 +415,27 @@ export function drawWindArrowSmall(ctx: CanvasRenderingContext2D, w: number, h: 
   ctx.restore();
 }
 
+/**
+ * Vertical strip of stacked hourly cells (midnight at top, 11pm at bottom),
+ * colored by wind speed — the trip planner's Windy-style wind heatmap.
+ * `hours` is indexed by hour-of-day (0-23); a missing slot is left blank.
+ */
+export function drawWindHeatStrip(
+  ctx: CanvasRenderingContext2D,
+  w: number,
+  h: number,
+  hours: (number | undefined)[],
+  colorFor: (mph: number) => string
+) {
+  const rows = 24;
+  const rowH = h / rows;
+  for (let hour = 0; hour < rows; hour++) {
+    const mph = hours[hour];
+    ctx.fillStyle = mph == null ? cssVar("--line") : colorFor(mph);
+    ctx.fillRect(0, hour * rowH, w, rowH + 0.5);
+  }
+}
+
 export function drawWaveBarSmall(ctx: CanvasRenderingContext2D, w: number, h: number, value: number, max: number, color: string) {
   const barW = 22;
   const barH = (h - 6) * (value / max);

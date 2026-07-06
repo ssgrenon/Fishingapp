@@ -110,6 +110,12 @@ export interface BiteScore {
   reasons: BiteScoreReason[];
 }
 
+export interface HourlyWindPoint {
+  hour: number;
+  mph: number;
+  dir: string;
+}
+
 export interface WeeklyDay {
   date: string;
   day: string;
@@ -118,6 +124,8 @@ export interface WeeklyDay {
   waveFt: number;
   score: number;
   tier: "good" | "caution" | "critical";
+  /** Hourly wind speed for the day (0-23, hours missing from the forecast omitted), for the wind-speed heatmap. */
+  hourlyWind: HourlyWindPoint[];
 }
 
 export interface Conditions {
