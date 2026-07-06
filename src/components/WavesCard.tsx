@@ -85,6 +85,21 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
       <div className="card-line">
         Chop <b>{waves.current.chop}</b>
       </div>
+      {waves.current.swellHeightFt != null && (
+        <div className="card-line">
+          Swell{" "}
+          <b>
+            {waves.current.swellHeightFt.toFixed(1)} ft
+            {waves.current.swellPeriodSec != null ? ` @ ${waves.current.swellPeriodSec}s` : ""}
+            {waves.current.swellDirection ? ` ${waves.current.swellDirection}` : ""}
+          </b>
+        </div>
+      )}
+      {waves.current.windWaveHeightFt != null && (
+        <div className="card-line">
+          Wind waves <b>{waves.current.windWaveHeightFt.toFixed(1)} ft</b>
+        </div>
+      )}
     </div>
   );
 }

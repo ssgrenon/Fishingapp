@@ -56,7 +56,18 @@ export interface HourlyPoint {
 
 export interface Waves {
   source: string;
-  current: { heightFt: number; periodSec: number; direction: string; chop: string };
+  current: {
+    heightFt: number;
+    periodSec: number;
+    direction: string;
+    chop: string;
+    /** Primary swell height/period/direction, from Open-Meteo Marine (ECMWF wave model). */
+    swellHeightFt?: number | null;
+    swellPeriodSec?: number | null;
+    swellDirection?: string | null;
+    /** Locally wind-driven chop height, separate from the swell, from Open-Meteo Marine. */
+    windWaveHeightFt?: number | null;
+  };
   thresholds: { calmMaxFt: number; moderateMaxFt: number };
   next6h: HourlyPoint[];
 }

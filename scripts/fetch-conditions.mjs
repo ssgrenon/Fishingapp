@@ -48,7 +48,11 @@ async function main() {
     { weather: fallback("weather", null), dailyWind: [] }
   );
   const wavesCurrent = await soft("NDBC waves", () => fetchWaves(), { source: "", current: fallback("waves", {}).current });
-  const marine = await soft("Open-Meteo marine", () => fetchMarine(), { hourly: [], dailyMaxWaveFt: new Map() });
+  const marine = await soft("Open-Meteo marine", () => fetchMarine(now), {
+    hourly: [],
+    dailyMaxWaveFt: new Map(),
+    current: fallback("waves", {}).current ?? null,
+  });
   const forecastHourly = await soft("Open-Meteo forecast", () => fetchHourlyForecast(), []);
   const pressure = await soft("NDBC pressure", () => fetchPressure(), fallback("pressure", null));
   const waterTempF = await fetchWaterTemp();
@@ -79,9 +83,20 @@ async function main() {
     storm: f.storm,
   }));
 
+  const buoyCurrent = wavesCurrent.current ?? {};
+  const marineCurrent = marine.current ?? {};
   const waves = {
     source: wavesCurrent.source || fallback("waves", {}).source || "NDBC",
-    current: wavesCurrent.current,
+    current: {
+      heightFt: buoyCurrent.heightFt ?? null,
+      periodSec: buoyCurrent.periodSec ?? marineCurrent.periodSec ?? null,
+      direction: buoyCurrent.direction ?? marineCurrent.direction ?? null,
+      chop: buoyCurrent.chop ?? "Unavailable",
+      swellHeightFt: marineCurrent.swellHeightFt ?? null,
+      swellPeriodSec: marineCurrent.swellPeriodSec ?? null,
+      swellDirection: marineCurrent.swellDirection ?? null,
+      windWaveHeightFt: marineCurrent.windWaveHeightFt ?? null,
+    },
     thresholds: WAVE_THRESHOLDS,
     next6h: wavesWindow.length ? wavesWindow : fallback("waves", {}).next6h ?? [],
   };
