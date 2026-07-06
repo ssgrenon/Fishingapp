@@ -36,6 +36,7 @@ export async function fetchMarine(now = new Date()) {
   const hourly = times.map((time, i) => ({
     time,
     heightFt: Math.round(heightsM[i] * M_TO_FT * 10) / 10,
+    periodSec: data.hourly.wave_period?.[i] ?? null,
   }));
 
   const dailyMaxWaveFt = new Map();

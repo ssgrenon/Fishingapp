@@ -1,6 +1,7 @@
 import { useThemedCanvas, cssVar } from "../lib/canvas";
 import { drawHourBars, drawWaveIcon, windDirDegrees } from "../lib/drawings";
 import { tierResolvedColor, tierVarString, waveHeightTier } from "../lib/thresholds";
+import { windSpeedColor, windSpeedGradientCss } from "../lib/windColor";
 import type { Conditions } from "../lib/types";
 
 export function WavesCard({ conditions }: { conditions: Conditions }) {
@@ -19,6 +20,7 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
           value: p.heightFt ?? 0,
           windDirDeg: p.windDirLabel != null ? windDirDegrees(p.windDirLabel) : undefined,
           windSpeedMph: p.windSpeedMph,
+          bottomLabel: p.periodSec != null ? `${p.periodSec}s` : undefined,
         })),
         {
           max: 4,
@@ -27,6 +29,7 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
           refLines: [calmMaxFt, moderateMaxFt],
           windArrows: true,
           arrowColor: cssVar("--accent"),
+          arrowColorFor: windSpeedColor,
         }
       ),
     [waves.next6h, calmMaxFt, moderateMaxFt]
@@ -55,7 +58,7 @@ export function WavesCard({ conditions }: { conditions: Conditions }) {
         </div>
         <div className="forecast-legend">
           <span>
-            <span className="dot" style={{ background: "var(--accent)" }} />
+            <span className="dot wind-grad-dot" style={{ background: windSpeedGradientCss() }} />
             ↑ wind dir · mph
           </span>
           <span>

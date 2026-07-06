@@ -91,6 +91,8 @@ export interface HourBarItem {
   windSpeedMph?: number;
   /** Optional short text drawn in the fixed band above the bar (e.g. precip inches). */
   topLabel?: string;
+  /** Optional short text drawn below the bar, above the hour label (e.g. wave period). */
+  bottomLabel?: string;
 }
 
 /** Shared hourly bar-chart renderer used for both the wave and rain forecasts. */
@@ -107,6 +109,8 @@ export function drawHourBars(
     refLines?: number[];
     windArrows?: boolean;
     arrowColor?: string;
+    /** Per-item wind-arrow/speed color (e.g. the wind-speed gradient), overriding arrowColor when windSpeedMph is set. */
+    arrowColorFor?: (mph: number) => string;
     topLabelColor?: string;
   }
 ) {
@@ -152,16 +156,18 @@ export function drawHourBars(
 
     // Wind arrow + speed (waves tile).
     if (opts.windArrows && typeof item.windDirDeg === "number") {
+      const itemWindColor =
+        typeof item.windSpeedMph === "number" && opts.arrowColorFor ? opts.arrowColorFor(item.windSpeedMph) : arrowColor;
       const ay = boltBand + 8;
       ctx.save();
       ctx.translate(cx, ay);
       ctx.rotate(((item.windDirDeg + 180) * Math.PI) / 180);
-      ctx.strokeStyle = arrowColor; ctx.fillStyle = arrowColor; ctx.lineWidth = 1.4; ctx.lineCap = "round";
+      ctx.strokeStyle = itemWindColor; ctx.fillStyle = itemWindColor; ctx.lineWidth = 1.4; ctx.lineCap = "round";
       ctx.beginPath(); ctx.moveTo(0, 6); ctx.lineTo(0, -6); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(0, -7); ctx.lineTo(-3.5, -2); ctx.lineTo(3.5, -2); ctx.closePath(); ctx.fill();
       ctx.restore();
       if (typeof item.windSpeedMph === "number") {
-        ctx.fillStyle = arrowColor;
+        ctx.fillStyle = itemWindColor;
         ctx.font = "600 8.5px " + cssVar("--font-mono");
         ctx.textAlign = "center";
         ctx.fillText(String(item.windSpeedMph), cx, boltBand + infoBand - 1);
@@ -181,6 +187,14 @@ export function drawHourBars(
     ctx.textAlign = "center";
     const labelY = Math.max(top - 4, boltBand + infoBand + 9);
     ctx.fillText(opts.valueLabel(item.value), cx, labelY);
+
+    // Fixed bottom-band text (e.g. wave period on the waves tile), between the bar and the hour label below the canvas.
+    if (item.bottomLabel) {
+      ctx.fillStyle = cssVar("--ink-faint");
+      ctx.font = "600 8.5px " + cssVar("--font-mono");
+      ctx.textAlign = "center";
+      ctx.fillText(item.bottomLabel, cx, h - 4);
+    }
 
     if (item.storm && opts.boltColor) {
       const bx = cx, by = pad + 5;

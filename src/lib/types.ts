@@ -45,6 +45,8 @@ export interface Solunar {
 export interface HourlyPoint {
   label: string;
   heightFt?: number;
+  /** Wave period in seconds, for the waves tile's per-hour period label. */
+  periodSec?: number | null;
   pct?: number;
   storm?: boolean;
   /** Wind direction the wind is blowing from (8-point compass), for the waves tile arrows. */

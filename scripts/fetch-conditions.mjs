@@ -71,6 +71,7 @@ async function main() {
     return {
       label: hourLabel(wp.time),
       heightFt: wp.heightFt,
+      periodSec: wp.periodSec,
       windDirLabel: wind?.windDirLabel,
       windSpeedMph: wind?.windSpeedMph,
     };
