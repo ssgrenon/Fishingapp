@@ -35,12 +35,24 @@ async function fetchRows() {
   return parseRows(text); // newest first, per NDBC convention
 }
 
+// Wind/pressure update every 10 min, but wave height/period/direction come from a
+// slower onboard calculation that only posts once every 30-60 min - so the single
+// newest row frequently has these marked "MM" (missing) even though a still-recent
+// reading exists a few rows back. Scan back through the last couple of hours for
+// the latest value actually present, per field.
+function latestValid(rows, key, maxAgeRows = 12) {
+  for (let i = 0; i < Math.min(rows.length, maxAgeRows); i++) {
+    const v = num(rows[i], key);
+    if (v !== null) return v;
+  }
+  return null;
+}
+
 export async function fetchWaves() {
   const rows = await fetchRows();
-  const latest = rows[0];
-  const wvhtM = num(latest, "WVHT");
-  const dpd = num(latest, "DPD");
-  const mwd = num(latest, "MWD");
+  const wvhtM = latestValid(rows, "WVHT");
+  const dpd = latestValid(rows, "DPD");
+  const mwd = latestValid(rows, "MWD");
 
   return {
     source: NDBC_STATION_LABEL,
