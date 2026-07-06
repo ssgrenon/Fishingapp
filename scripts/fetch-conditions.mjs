@@ -11,7 +11,7 @@ import path from "node:path";
 
 import { LOCATION, WAVE_THRESHOLDS } from "./config.mjs";
 import { soft } from "./lib/http.mjs";
-import { localMidnight, localDateOffset } from "./lib/time.mjs";
+import { localMidnight, localDateOffset, localDateAndHour } from "./lib/time.mjs";
 import { computeAstronomy } from "./lib/astronomy.mjs";
 import { fetchTide } from "./lib/noaaTides.mjs";
 import { fetchWeather } from "./lib/nwsWeather.mjs";
@@ -48,7 +48,11 @@ async function main() {
     { weather: fallback("weather", null), dailyWind: [] }
   );
   const wavesCurrent = await soft("NDBC waves", () => fetchWaves(), { source: "", current: fallback("waves", {}).current });
-  const marine = await soft("Open-Meteo marine", () => fetchMarine(), { hourly: [], dailyMaxWaveFt: new Map() });
+  const marine = await soft("Open-Meteo marine", () => fetchMarine(now), {
+    hourly: [],
+    dailyMaxWaveFt: new Map(),
+    current: fallback("waves", {}).current ?? null,
+  });
   const forecastHourly = await soft("Open-Meteo forecast", () => fetchHourlyForecast(), []);
   const pressure = await soft("NDBC pressure", () => fetchPressure(), fallback("pressure", null));
   const waterTempF = await fetchWaterTemp();
@@ -67,6 +71,7 @@ async function main() {
     return {
       label: hourLabel(wp.time),
       heightFt: wp.heightFt,
+      periodSec: wp.periodSec,
       windDirLabel: wind?.windDirLabel,
       windSpeedMph: wind?.windSpeedMph,
     };
@@ -79,14 +84,35 @@ async function main() {
     storm: f.storm,
   }));
 
+  const buoyCurrent = wavesCurrent.current ?? {};
+  const marineCurrent = marine.current ?? {};
   const waves = {
     source: wavesCurrent.source || fallback("waves", {}).source || "NDBC",
-    current: wavesCurrent.current,
+    current: {
+      heightFt: buoyCurrent.heightFt ?? null,
+      periodSec: buoyCurrent.periodSec ?? marineCurrent.periodSec ?? null,
+      direction: buoyCurrent.direction ?? marineCurrent.direction ?? null,
+      chop: buoyCurrent.chop ?? "Unavailable",
+      swellHeightFt: marineCurrent.swellHeightFt ?? null,
+      swellPeriodSec: marineCurrent.swellPeriodSec ?? null,
+      swellDirection: marineCurrent.swellDirection ?? null,
+      windWaveHeightFt: marineCurrent.windWaveHeightFt ?? null,
+    },
     thresholds: WAVE_THRESHOLDS,
     next6h: wavesWindow.length ? wavesWindow : fallback("waves", {}).next6h ?? [],
   };
 
   if (weather && rainWindow.length) weather.rainNext6h = rainWindow;
+
+  // Hourly wind by local calendar date, for the trip planner's wind-speed
+  // heatmap (24 slots/day; hours missing from the forecast are left out).
+  const hourlyWindByDate = new Map();
+  forecastHourly.forEach((f) => {
+    const { date, hour } = localDateAndHour(f.time);
+    if (!hourlyWindByDate.has(date)) hourlyWindByDate.set(date, []);
+    hourlyWindByDate.get(date).push({ hour, mph: f.windSpeedMph, dir: f.windDirLabel });
+  });
+  const previousWeekly = fallback("weekly", []);
 
   const weekly = [];
   for (let i = 0; i < 7; i++) {
@@ -95,6 +121,8 @@ async function main() {
     const waveFt = marine.dailyMaxWaveFt.get(date) ?? waves.current.heightFt ?? 2;
     const { score, tier } = computeDailyScore({ windMph: wind.windMph, waveFt });
     const dateObj = new Date(`${date}T12:00:00Z`);
+    const hourlyWind =
+      hourlyWindByDate.get(date) ?? previousWeekly.find((d) => d.date === date)?.hourlyWind ?? [];
     weekly.push({
       date,
       day: dateObj.toLocaleDateString("en-US", { weekday: "short", timeZone: "UTC" }),
@@ -103,6 +131,7 @@ async function main() {
       waveFt: Math.round(waveFt * 10) / 10,
       score,
       tier,
+      hourlyWind,
     });
   }
 

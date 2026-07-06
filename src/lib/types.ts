@@ -45,6 +45,8 @@ export interface Solunar {
 export interface HourlyPoint {
   label: string;
   heightFt?: number;
+  /** Wave period in seconds, for the waves tile's per-hour period label. */
+  periodSec?: number | null;
   pct?: number;
   storm?: boolean;
   /** Wind direction the wind is blowing from (8-point compass), for the waves tile arrows. */
@@ -56,7 +58,18 @@ export interface HourlyPoint {
 
 export interface Waves {
   source: string;
-  current: { heightFt: number; periodSec: number; direction: string; chop: string };
+  current: {
+    heightFt: number;
+    periodSec: number;
+    direction: string;
+    chop: string;
+    /** Primary swell height/period/direction, from Open-Meteo Marine (ECMWF wave model). */
+    swellHeightFt?: number | null;
+    swellPeriodSec?: number | null;
+    swellDirection?: string | null;
+    /** Locally wind-driven chop height, separate from the swell, from Open-Meteo Marine. */
+    windWaveHeightFt?: number | null;
+  };
   thresholds: { calmMaxFt: number; moderateMaxFt: number };
   next6h: HourlyPoint[];
 }
@@ -99,6 +112,12 @@ export interface BiteScore {
   reasons: BiteScoreReason[];
 }
 
+export interface HourlyWindPoint {
+  hour: number;
+  mph: number;
+  dir: string;
+}
+
 export interface WeeklyDay {
   date: string;
   day: string;
@@ -107,6 +126,8 @@ export interface WeeklyDay {
   waveFt: number;
   score: number;
   tier: "good" | "caution" | "critical";
+  /** Hourly wind speed for the day (0-23, hours missing from the forecast omitted), for the wind-speed heatmap. */
+  hourlyWind: HourlyWindPoint[];
 }
 
 export interface Conditions {

@@ -2,7 +2,8 @@
 
 A free, no-login fishing-conditions dashboard for Oak Island, NC: tide, sunrise/moonrise with a
 sky-position arc, wave height, weather with rain/thunderstorm timing, barometric pressure, a
-water-clarity estimate, a composite "bite score," a 7-day trip planner, and a local reports feed.
+water-clarity estimate, a composite "bite score," a 7-day trip planner with an hourly wind-speed
+heatmap, and a local reports feed.
 
 ## Architecture
 
@@ -32,9 +33,10 @@ hand-edited file — update it directly whenever you hear of a new report.
 |---|---|
 | Tide | NOAA CO-OPS predictions API, station `8659182` |
 | Sun / moon / solunar | Computed locally with `suncalc` — no API |
-| Waves (current) | NDBC buoy `41013` (Frying Pan Shoals) realtime2 feed |
+| Waves (current) | NDBC buoy `41013` (Frying Pan Shoals) realtime2 feed, with height/period/direction backfilled from Open-Meteo Marine when the buoy reading is stale/missing |
+| Waves (swell / wind-wave breakdown) | Open-Meteo Marine API — the same swell height/period/direction and wind-wave height Windy's wave meteogram is built from |
 | Waves (6h / 7-day forecast) | Open-Meteo Marine API |
-| Hourly wind (waves tile arrows) + rain chance / precip inches (weather tile) | Open-Meteo Forecast API |
+| Hourly wind (waves tile arrows, 7-day wind-speed heatmap) + rain chance / precip inches (weather tile) | Open-Meteo Forecast API |
 | Current weather, thunderstorm timing | NWS `api.weather.gov` |
 | Pressure (current + 24h trend) | NDBC buoy `41013` |
 | Water temp | NDBC buoy `41013` |

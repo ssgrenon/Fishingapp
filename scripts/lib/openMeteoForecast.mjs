@@ -36,13 +36,15 @@ export function windowAround(items, now, before = 2, after = 4) {
 /**
  * Hourly wind + precipitation series from Open-Meteo's forecast API. Includes
  * the previous day so a window reaching before `now` still has data. Powers
- * the wind arrows on the waves tile and the precip labels on the weather tile.
+ * the wind arrows on the waves tile, the precip labels on the weather tile,
+ * and the 7-day hourly wind-speed heatmap on the trip planner (hence
+ * `forecast_days=8`, matching the marine forecast's horizon).
  */
 export async function fetchHourlyForecast() {
   const url =
     `https://api.open-meteo.com/v1/forecast?latitude=${LOCATION.lat}&longitude=${LOCATION.lon}` +
     `&hourly=precipitation_probability,precipitation,wind_speed_10m,wind_direction_10m,weathercode` +
-    `&wind_speed_unit=mph&precipitation_unit=inch&timezone=UTC&past_days=1&forecast_days=2`;
+    `&wind_speed_unit=mph&precipitation_unit=inch&timezone=UTC&past_days=1&forecast_days=8`;
   const data = await fetchJson(url, {}, "Open-Meteo Forecast");
   const h = data.hourly;
 
