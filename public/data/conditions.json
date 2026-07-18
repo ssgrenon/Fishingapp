@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-07-18T06:28:02.651Z",
+  "updated": "2026-07-18T10:47:39.169Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-07-18T07:48:00.651Z",
-        "end": "2026-07-18T09:48:00.651Z"
+        "start": "2026-07-18T07:48:00.169Z",
+        "end": "2026-07-18T09:48:00.169Z"
       },
       {
-        "start": "2026-07-18T20:06:00.651Z",
-        "end": "2026-07-18T22:06:00.651Z"
+        "start": "2026-07-18T20:06:00.169Z",
+        "end": "2026-07-18T22:06:00.169Z"
       }
     ],
     "minors": [
@@ -120,14 +120,14 @@
   "waves": {
     "source": "NDBC 41013 Frying Pan Shoals",
     "current": {
-      "heightFt": 2.3,
+      "heightFt": 2,
       "periodSec": 4,
       "direction": "SW",
       "chop": "Moderate",
       "swellHeightFt": 1.2,
-      "swellPeriodSec": 3.05,
+      "swellPeriodSec": 3.1,
       "swellDirection": "S",
-      "windWaveHeightFt": 0.9
+      "windWaveHeightFt": 1.1
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -135,46 +135,18 @@
     },
     "next6h": [
       {
-        "label": "12am",
-        "heightFt": 2,
-        "periodSec": 4.15,
-        "windDirLabel": "S",
-        "windSpeedMph": 10
-      },
-      {
-        "label": "1am",
-        "heightFt": 2,
-        "periodSec": 4.25,
-        "windDirLabel": "SW",
-        "windSpeedMph": 7
-      },
-      {
-        "label": "2am",
-        "heightFt": 1.9,
-        "periodSec": 4.3,
-        "windDirLabel": "S",
-        "windSpeedMph": 6
-      },
-      {
-        "label": "3am",
-        "heightFt": 1.9,
-        "periodSec": 4.3,
-        "windDirLabel": "S",
-        "windSpeedMph": 7
-      },
-      {
         "label": "4am",
         "heightFt": 1.8,
         "periodSec": 4.3,
         "windDirLabel": "S",
-        "windSpeedMph": 7
+        "windSpeedMph": 5
       },
       {
         "label": "5am",
         "heightFt": 1.8,
         "periodSec": 4.3,
         "windDirLabel": "S",
-        "windSpeedMph": 8
+        "windSpeedMph": 6
       },
       {
         "label": "6am",
@@ -182,57 +154,85 @@
         "periodSec": 4.3,
         "windDirLabel": "S",
         "windSpeedMph": 6
+      },
+      {
+        "label": "7am",
+        "heightFt": 1.8,
+        "periodSec": 4.3,
+        "windDirLabel": "S",
+        "windSpeedMph": 6
+      },
+      {
+        "label": "8am",
+        "heightFt": 1.8,
+        "periodSec": 4.3,
+        "windDirLabel": "S",
+        "windSpeedMph": 9
+      },
+      {
+        "label": "9am",
+        "heightFt": 1.9,
+        "periodSec": 4.25,
+        "windDirLabel": "S",
+        "windSpeedMph": 9
+      },
+      {
+        "label": "10am",
+        "heightFt": 2,
+        "periodSec": 4.2,
+        "windDirLabel": "S",
+        "windSpeedMph": 10
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 84,
-    "conditions": "Partly Cloudy",
-    "windMph": 9,
-    "windGustMph": 15,
+    "tempF": 83,
+    "conditions": "Mostly Sunny",
+    "windMph": 8,
+    "windGustMph": 13,
     "windDirLabel": "SW",
-    "humidityPct": 87,
+    "humidityPct": 86,
     "rainNext6h": [
       {
-        "label": "12am",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "1am",
-        "pct": 2,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "2am",
-        "pct": 2,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "3am",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
         "label": "4am",
-        "pct": 1,
+        "pct": 0,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "5am",
-        "pct": 3,
+        "pct": 2,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "6am",
+        "pct": 2,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "7am",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "8am",
+        "pct": 4,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "9am",
         "pct": 3,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "10am",
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       }
@@ -243,19 +243,19 @@
     }
   },
   "pressure": {
-    "current": 30.05,
-    "trend": "rising",
-    "trendNote": "rising 0.04 in since yesterday",
+    "current": 30.02,
+    "trend": "steady",
+    "trendNote": "steady 0.00 in since yesterday",
     "last24h": [
-      30.01,
-      30.01,
-      30.03,
-      30.05,
-      30.05,
-      30.03,
-      30.01,
+      30.02,
       30.04,
-      30.05
+      30.06,
+      30.04,
+      30.02,
+      30.02,
+      30.07,
+      30.03,
+      30.02
     ]
   },
   "water": {
@@ -265,13 +265,13 @@
     "riverDischarge": "Below normal"
   },
   "biteScore": {
-    "value": 92,
+    "value": 96,
     "verdict": "Good",
     "headline": "Good bite window this morning",
     "reasons": [
       {
         "tier": "good",
-        "text": "Pressure rising"
+        "text": "Pressure steady"
       },
       {
         "tier": "good",
@@ -279,11 +279,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 9 mph SW"
-      },
-      {
-        "tier": "caution",
-        "text": "Waves moderate, 2.3 ft"
+        "text": "Wind light, 8 mph SW"
       },
       {
         "tier": "good",
@@ -308,27 +304,27 @@
         },
         {
           "hour": 1,
-          "mph": 7,
+          "mph": 6,
           "dir": "SW"
         },
         {
           "hour": 2,
-          "mph": 6,
-          "dir": "S"
+          "mph": 5,
+          "dir": "SW"
         },
         {
           "hour": 3,
-          "mph": 7,
-          "dir": "S"
+          "mph": 4,
+          "dir": "SW"
         },
         {
           "hour": 4,
-          "mph": 7,
+          "mph": 5,
           "dir": "S"
         },
         {
           "hour": 5,
-          "mph": 8,
+          "mph": 6,
           "dir": "S"
         },
         {
@@ -338,22 +334,22 @@
         },
         {
           "hour": 7,
-          "mph": 9,
+          "mph": 6,
           "dir": "S"
         },
         {
           "hour": 8,
-          "mph": 10,
+          "mph": 9,
           "dir": "S"
         },
         {
           "hour": 9,
-          "mph": 11,
+          "mph": 9,
           "dir": "S"
         },
         {
           "hour": 10,
-          "mph": 11,
+          "mph": 10,
           "dir": "S"
         },
         {
@@ -363,12 +359,12 @@
         },
         {
           "hour": 12,
-          "mph": 12,
+          "mph": 13,
           "dir": "S"
         },
         {
           "hour": 13,
-          "mph": 12,
+          "mph": 13,
           "dir": "S"
         },
         {
@@ -378,22 +374,22 @@
         },
         {
           "hour": 15,
-          "mph": 13,
+          "mph": 14,
           "dir": "S"
         },
         {
           "hour": 16,
-          "mph": 15,
+          "mph": 16,
           "dir": "S"
         },
         {
           "hour": 17,
-          "mph": 15,
+          "mph": 16,
           "dir": "S"
         },
         {
           "hour": 18,
-          "mph": 16,
+          "mph": 17,
           "dir": "S"
         },
         {
@@ -403,13 +399,13 @@
         },
         {
           "hour": 20,
-          "mph": 18,
+          "mph": 17,
           "dir": "S"
         },
         {
           "hour": 21,
-          "mph": 17,
-          "dir": "SW"
+          "mph": 16,
+          "dir": "S"
         },
         {
           "hour": 22,
@@ -426,15 +422,15 @@
     {
       "date": "2026-07-19",
       "day": "Sun",
-      "windMph": 18,
+      "windMph": 21,
       "windDir": "SW",
       "waveFt": 4.6,
-      "score": 24,
+      "score": 19,
       "tier": "critical",
       "hourlyWind": [
         {
           "hour": 0,
-          "mph": 17,
+          "mph": 16,
           "dir": "SW"
         },
         {
@@ -449,17 +445,17 @@
         },
         {
           "hour": 3,
-          "mph": 15,
+          "mph": 14,
           "dir": "SW"
         },
         {
           "hour": 4,
-          "mph": 14,
+          "mph": 13,
           "dir": "SW"
         },
         {
           "hour": 5,
-          "mph": 14,
+          "mph": 13,
           "dir": "SW"
         },
         {
@@ -474,17 +470,17 @@
         },
         {
           "hour": 8,
-          "mph": 15,
+          "mph": 12,
           "dir": "SW"
         },
         {
           "hour": 9,
-          "mph": 15,
+          "mph": 13,
           "dir": "SW"
         },
         {
           "hour": 10,
-          "mph": 16,
+          "mph": 13,
           "dir": "SW"
         },
         {
@@ -504,52 +500,52 @@
         },
         {
           "hour": 14,
-          "mph": 18,
+          "mph": 17,
           "dir": "SW"
         },
         {
           "hour": 15,
-          "mph": 18,
-          "dir": "SW"
-        },
-        {
-          "hour": 16,
-          "mph": 19,
-          "dir": "SW"
-        },
-        {
-          "hour": 17,
-          "mph": 19,
-          "dir": "S"
-        },
-        {
-          "hour": 18,
           "mph": 20,
           "dir": "SW"
         },
         {
+          "hour": 16,
+          "mph": 21,
+          "dir": "SW"
+        },
+        {
+          "hour": 17,
+          "mph": 22,
+          "dir": "SW"
+        },
+        {
+          "hour": 18,
+          "mph": 21,
+          "dir": "SW"
+        },
+        {
           "hour": 19,
-          "mph": 19,
+          "mph": 22,
           "dir": "SW"
         },
         {
           "hour": 20,
-          "mph": 18,
+          "mph": 20,
           "dir": "SW"
         },
         {
           "hour": 21,
-          "mph": 15,
+          "mph": 19,
           "dir": "SW"
         },
         {
           "hour": 22,
-          "mph": 14,
+          "mph": 18,
           "dir": "SW"
         },
         {
           "hour": 23,
-          "mph": 14,
+          "mph": 17,
           "dir": "SW"
         }
       ]
@@ -557,15 +553,15 @@
     {
       "date": "2026-07-20",
       "day": "Mon",
-      "windMph": 14,
+      "windMph": 16,
       "windDir": "SW",
       "waveFt": 4.2,
-      "score": 36,
+      "score": 33,
       "tier": "critical",
       "hourlyWind": [
         {
           "hour": 0,
-          "mph": 12,
+          "mph": 15,
           "dir": "SW"
         },
         {
@@ -575,7 +571,7 @@
         },
         {
           "hour": 2,
-          "mph": 14,
+          "mph": 15,
           "dir": "SW"
         },
         {
@@ -688,10 +684,10 @@
     {
       "date": "2026-07-21",
       "day": "Tue",
-      "windMph": 21,
+      "windMph": 20,
       "windDir": "SW",
       "waveFt": 4.7,
-      "score": 17,
+      "score": 19,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -819,10 +815,10 @@
     {
       "date": "2026-07-22",
       "day": "Wed",
-      "windMph": 21,
+      "windMph": 23,
       "windDir": "SW",
       "waveFt": 5.4,
-      "score": 6,
+      "score": 5,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -950,10 +946,10 @@
     {
       "date": "2026-07-23",
       "day": "Thu",
-      "windMph": 14,
-      "windDir": "SW",
+      "windMph": 13,
+      "windDir": "N",
       "waveFt": 5,
-      "score": 24,
+      "score": 25,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -1081,8 +1077,8 @@
     {
       "date": "2026-07-24",
       "day": "Fri",
-      "windMph": 12,
-      "windDir": "E",
+      "windMph": 9,
+      "windDir": "NE",
       "waveFt": 2.6,
       "score": 63,
       "tier": "caution",
