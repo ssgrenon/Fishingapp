@@ -33,7 +33,7 @@ hand-edited file — update it directly whenever you hear of a new report.
 |---|---|
 | Tide | NOAA CO-OPS predictions API, station `8659182` |
 | Sun / moon / solunar | Computed locally with `suncalc` — no API |
-| Waves (current) | NDBC buoy `41013` (Frying Pan Shoals) realtime2 feed, with height/period/direction backfilled from Open-Meteo Marine when the buoy reading is stale/missing |
+| Waves (current) | NDBC buoy `SSBN7` (Sunset Beach Nearshore Waves, ~19 mi from Oak Island), falling back to buoy `41037` (CORMP, Wrightsville Beach) if SSBN7 is down, then to Open-Meteo Marine if both buoys are unavailable |
 | Waves (swell / wind-wave breakdown) | Open-Meteo Marine API — the same swell height/period/direction and wind-wave height Windy's wave meteogram is built from |
 | Waves (6h / 7-day forecast) | Open-Meteo Marine API |
 | Hourly wind (waves tile arrows, 7-day wind-speed heatmap) + rain chance / precip inches (weather tile) | Open-Meteo Forecast API |
@@ -53,8 +53,10 @@ which have normal internet access, so it should work once merged — but the fir
 runs are worth checking (Actions tab → "Update conditions data") in case any of the following
 assumptions don't hold in practice:
 
-- The NOAA tide station (`8659182`) and NDBC buoy (`41013`) are the closest match found for Oak
-  Island, but weren't confirmed against a live station lookup.
+- The NOAA tide station (`8659182`) and NDBC wave buoys (`SSBN7`, `41037`) are the closest match
+  found for Oak Island, but weren't confirmed against a live station lookup or a live fetch of
+  their realtime2 feed — worth double-checking that both report data in the standard NDBC
+  realtime2 column format once the scheduled workflow runs for real.
 - The USGS discharge gauge and its "normal" range (`scripts/config.mjs` /
   `scripts/lib/usgsWater.mjs`) are a rough placeholder, not a validated hydrological baseline.
 - NWS doesn't expose a clean numeric "thunderstorm probability" — the storm window is inferred by
