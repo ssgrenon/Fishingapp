@@ -1,5 +1,5 @@
 import { fetchText, soft } from "./http.mjs";
-import { NDBC_STATION, NDBC_STATION_LABEL } from "../config.mjs";
+import { NDBC_STATION, NDBC_WAVE_STATIONS } from "../config.mjs";
 
 const COLUMNS = ["YY", "MM", "DD", "hh", "mm", "WDIR", "WSPD", "GST", "WVHT", "DPD", "APD", "MWD", "PRES", "ATMP", "WTMP", "DEWP", "VIS", "PTDY", "TIDE"];
 const MM = "MM"; // NDBC's missing-value marker
@@ -30,8 +30,12 @@ function rowTime(row) {
   return new Date(Date.UTC(Number(row.YY), Number(row.MM) - 1, Number(row.DD), Number(row.hh), Number(row.mm)));
 }
 
-async function fetchRows() {
-  const text = await fetchText(`https://www.ndbc.noaa.gov/data/realtime2/${NDBC_STATION}.txt`, {}, "NDBC realtime2");
+async function fetchRows(stationId) {
+  const text = await fetchText(
+    `https://www.ndbc.noaa.gov/data/realtime2/${stationId}.txt`,
+    {},
+    `NDBC realtime2 (${stationId})`
+  );
   return parseRows(text); // newest first, per NDBC convention
 }
 
@@ -48,26 +52,39 @@ function latestValid(rows, key, maxAgeRows = 12) {
   return null;
 }
 
+// Tries each station in NDBC_WAVE_STATIONS in order (nearest to Oak Island
+// first), falling through to the next if a station is unreachable or its
+// wave sensor has no recent reading.
 export async function fetchWaves() {
-  const rows = await fetchRows();
-  const wvhtM = latestValid(rows, "WVHT");
-  const dpd = latestValid(rows, "DPD");
-  const mwd = latestValid(rows, "MWD");
+  let lastErr;
+  for (const station of NDBC_WAVE_STATIONS) {
+    try {
+      const rows = await fetchRows(station.id);
+      const wvhtM = latestValid(rows, "WVHT");
+      if (wvhtM === null) throw new Error("no recent WVHT reading");
+      const dpd = latestValid(rows, "DPD");
+      const mwd = latestValid(rows, "MWD");
 
-  return {
-    source: NDBC_STATION_LABEL,
-    current: {
-      heightFt: wvhtM !== null ? Math.round(wvhtM * 3.28084 * 10) / 10 : null,
-      periodSec: dpd,
-      direction: mwd !== null ? degToCompass(mwd) : null,
-      chop: wvhtM !== null && wvhtM < 0.6 ? "Light" : wvhtM !== null && wvhtM < 1.2 ? "Moderate" : "Choppy",
-    },
-  };
+      return {
+        source: station.label,
+        current: {
+          heightFt: Math.round(wvhtM * 3.28084 * 10) / 10,
+          periodSec: dpd,
+          direction: mwd !== null ? degToCompass(mwd) : null,
+          chop: wvhtM < 0.6 ? "Light" : wvhtM < 1.2 ? "Moderate" : "Choppy",
+        },
+      };
+    } catch (err) {
+      console.warn(`[warn] ${station.label} failed: ${err.message}`);
+      lastErr = err;
+    }
+  }
+  throw lastErr ?? new Error("no NDBC wave stations configured");
 }
 
 /** Buoy-reported barometric pressure (current + trailing 24h), used as the Pressure card's primary source. */
 export async function fetchPressure() {
-  const rows = await fetchRows();
+  const rows = await fetchRows(NDBC_STATION);
   const withPres = rows.filter((r) => num(r, "PRES") !== null);
   if (!withPres.length) throw new Error("no PRES readings in NDBC feed");
 
@@ -95,7 +112,7 @@ export async function fetchWaterTemp() {
   return soft(
     "NDBC water temp",
     async () => {
-      const rows = await fetchRows();
+      const rows = await fetchRows(NDBC_STATION);
       const withTemp = rows.find((r) => num(r, "WTMP") !== null);
       if (!withTemp) throw new Error("no WTMP readings");
       const c = num(withTemp, "WTMP");
