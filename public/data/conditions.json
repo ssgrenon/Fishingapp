@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-08T13:00:30.036Z",
+  "updated": "2026-08-08T13:49:48.014Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -61,11 +61,6 @@
     ],
     "next": [
       {
-        "type": "Low",
-        "time": "2026-08-08T13:45:00.000Z",
-        "heightFt": 0
-      },
-      {
         "type": "High",
         "time": "2026-08-08T20:10:00.000Z",
         "heightFt": 5.7
@@ -74,6 +69,11 @@
         "type": "Low",
         "time": "2026-08-09T02:55:00.000Z",
         "heightFt": 0.6
+      },
+      {
+        "type": "High",
+        "time": "2026-08-09T08:35:00.000Z",
+        "heightFt": 4.3
       }
     ],
     "thresholds": {
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-08T12:24:00.036Z",
-        "end": "2026-08-08T14:24:00.036Z"
+        "start": "2026-08-08T12:24:00.014Z",
+        "end": "2026-08-08T14:24:00.014Z"
       },
       {
-        "start": "2026-08-09T00:54:00.036Z",
-        "end": "2026-08-09T02:54:00.036Z"
+        "start": "2026-08-09T00:54:00.014Z",
+        "end": "2026-08-09T02:54:00.014Z"
       }
     ],
     "minors": [
@@ -120,7 +120,7 @@
   "waves": {
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
-      "heightFt": 2.3,
+      "heightFt": 2.6,
       "periodSec": 9,
       "direction": "SE",
       "chop": "Moderate",
@@ -208,13 +208,13 @@
       },
       {
         "label": "9am",
-        "pct": 0,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "10am",
-        "pct": 0,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
@@ -226,7 +226,7 @@
       },
       {
         "label": "12pm",
-        "pct": 0,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
@@ -248,13 +248,13 @@
     "trendNote": "falling 0.07 in since yesterday",
     "last24h": [
       30.25,
-      30.25,
+      30.24,
       30.22,
-      30.21,
-      30.17,
+      30.2,
       30.19,
+      30.18,
+      30.15,
       30.16,
-      30.14,
       30.18
     ]
   },
@@ -283,11 +283,11 @@
       },
       {
         "tier": "caution",
-        "text": "Waves moderate, 2.3 ft"
+        "text": "Waves moderate, 2.6 ft"
       },
       {
         "tier": "good",
-        "text": "Outgoing tide"
+        "text": "Incoming tide"
       }
     ]
   },
