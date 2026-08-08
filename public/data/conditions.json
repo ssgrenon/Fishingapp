@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-08T04:38:54.668Z",
+  "updated": "2026-08-08T05:24:16.491Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-08T12:24:00.668Z",
-        "end": "2026-08-08T14:24:00.668Z"
+        "start": "2026-08-08T12:24:00.491Z",
+        "end": "2026-08-08T14:24:00.491Z"
       },
       {
-        "start": "2026-08-09T00:54:00.668Z",
-        "end": "2026-08-09T02:54:00.668Z"
+        "start": "2026-08-09T00:54:00.491Z",
+        "end": "2026-08-09T02:54:00.491Z"
       }
     ],
     "minors": [
@@ -125,22 +125,15 @@
       "direction": "SE",
       "chop": "Moderate",
       "swellHeightFt": 2.9,
-      "swellPeriodSec": 6.15,
+      "swellPeriodSec": 6.1,
       "swellDirection": "SE",
-      "windWaveHeightFt": 0.5
+      "windWaveHeightFt": 0.6
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "10pm",
-        "heightFt": 3,
-        "periodSec": 7.5,
-        "windDirLabel": "S",
-        "windSpeedMph": 5
-      },
       {
         "label": "11pm",
         "heightFt": 3,
@@ -182,6 +175,13 @@
         "periodSec": 6.7,
         "windDirLabel": "S",
         "windSpeedMph": 6
+      },
+      {
+        "label": "5am",
+        "heightFt": 2.8,
+        "periodSec": 6.65,
+        "windDirLabel": "S",
+        "windSpeedMph": 7
       }
     ]
   },
@@ -192,14 +192,8 @@
     "windMph": 7,
     "windGustMph": 12,
     "windDirLabel": "S",
-    "humidityPct": 83,
+    "humidityPct": 84,
     "rainNext6h": [
-      {
-        "label": "10pm",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "11pm",
         "pct": 0,
@@ -226,12 +220,18 @@
       },
       {
         "label": "3am",
-        "pct": 1,
+        "pct": 0,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "4am",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "5am",
         "pct": 1,
         "precipIn": 0,
         "storm": false
@@ -245,16 +245,16 @@
   "pressure": {
     "current": 30.18,
     "trend": "falling",
-    "trendNote": "falling 0.06 in since yesterday",
+    "trendNote": "falling 0.04 in since yesterday",
     "last24h": [
-      30.24,
-      30.21,
-      30.21,
-      30.25,
-      30.25,
       30.22,
       30.2,
-      30.18,
+      30.22,
+      30.25,
+      30.24,
+      30.21,
+      30.19,
+      30.19,
       30.18
     ]
   },
