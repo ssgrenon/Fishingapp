@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-10T22:44:36.393Z",
+  "updated": "2026-08-10T23:18:30.029Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-10T14:30:00.393Z",
-        "end": "2026-08-10T16:30:00.393Z"
+        "start": "2026-08-10T14:30:00.029Z",
+        "end": "2026-08-10T16:30:00.029Z"
       },
       {
-        "start": "2026-08-11T03:06:00.393Z",
-        "end": "2026-08-11T05:06:00.393Z"
+        "start": "2026-08-11T03:06:00.029Z",
+        "end": "2026-08-11T05:06:00.029Z"
       }
     ],
     "minors": [
@@ -120,14 +120,14 @@
   "waves": {
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
-      "heightFt": 3,
+      "heightFt": 3.3,
       "periodSec": 4,
       "direction": "S",
       "chop": "Moderate",
       "swellHeightFt": 1.7,
-      "swellPeriodSec": 4.2,
+      "swellPeriodSec": 4.15,
       "swellDirection": "S",
-      "windWaveHeightFt": 1.6
+      "windWaveHeightFt": 1.8
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -135,18 +135,11 @@
     },
     "next6h": [
       {
-        "label": "4pm",
-        "heightFt": 2.3,
-        "periodSec": 4.3,
-        "windDirLabel": "S",
-        "windSpeedMph": 16
-      },
-      {
         "label": "5pm",
         "heightFt": 2.4,
         "periodSec": 4.25,
-        "windDirLabel": "W",
-        "windSpeedMph": 6
+        "windDirLabel": "SW",
+        "windSpeedMph": 14
       },
       {
         "label": "6pm",
@@ -160,28 +153,35 @@
         "heightFt": 2.6,
         "periodSec": 4.2,
         "windDirLabel": "SW",
-        "windSpeedMph": 19
+        "windSpeedMph": 9
       },
       {
         "label": "8pm",
         "heightFt": 2.6,
         "periodSec": 4.2,
         "windDirLabel": "SW",
-        "windSpeedMph": 13
+        "windSpeedMph": 10
       },
       {
         "label": "9pm",
         "heightFt": 2.7,
         "periodSec": 4.2,
         "windDirLabel": "SW",
-        "windSpeedMph": 8
+        "windSpeedMph": 9
       },
       {
         "label": "10pm",
         "heightFt": 2.8,
         "periodSec": 4.2,
         "windDirLabel": "SW",
-        "windSpeedMph": 11
+        "windSpeedMph": 8
+      },
+      {
+        "label": "11pm",
+        "heightFt": 2.8,
+        "periodSec": 4.2,
+        "windDirLabel": "SW",
+        "windSpeedMph": 9
       }
     ]
   },
@@ -195,12 +195,6 @@
     "humidityPct": 85,
     "rainNext6h": [
       {
-        "label": "4pm",
-        "pct": 11,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
         "label": "5pm",
         "pct": 29,
         "precipIn": 0.06,
@@ -209,53 +203,59 @@
       {
         "label": "6pm",
         "pct": 30,
-        "precipIn": 0,
+        "precipIn": 0.02,
         "storm": false
       },
       {
         "label": "7pm",
-        "pct": 41,
+        "pct": 47,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "8pm",
-        "pct": 25,
+        "pct": 37,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "9pm",
-        "pct": 15,
+        "pct": 22,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "10pm",
-        "pct": 17,
+        "pct": 21,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "11pm",
+        "pct": 10,
         "precipIn": 0,
         "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "6:00 PM – 8:00 PM"
+      "windowLabel": "7:00 PM – 8:00 PM"
     }
   },
   "pressure": {
-    "current": 30.1,
+    "current": 30.09,
     "trend": "steady",
-    "trendNote": "steady 0.01 in since yesterday",
+    "trendNote": "steady 0.00 in since yesterday",
     "last24h": [
       30.09,
       30.12,
-      30.13,
-      30.1,
-      30.11,
-      30.15,
-      30.16,
+      30.12,
       30.09,
-      30.1
+      30.13,
+      30.16,
+      30.15,
+      30.07,
+      30.09
     ]
   },
   "water": {
@@ -265,9 +265,9 @@
     "riverDischarge": "Normal"
   },
   "biteScore": {
-    "value": 82,
-    "verdict": "Good",
-    "headline": "Good fishing conditions today",
+    "value": 70,
+    "verdict": "Fair",
+    "headline": "Fair fishing conditions today",
     "reasons": [
       {
         "tier": "good",
@@ -278,8 +278,8 @@
         "text": "Wind light, 14 mph SW"
       },
       {
-        "tier": "caution",
-        "text": "Waves moderate, 3.0 ft"
+        "tier": "critical",
+        "text": "Waves rough, 3.3 ft"
       },
       {
         "tier": "good",
@@ -384,8 +384,8 @@
         },
         {
           "hour": 17,
-          "mph": 6,
-          "dir": "W"
+          "mph": 14,
+          "dir": "SW"
         },
         {
           "hour": 18,
@@ -394,28 +394,28 @@
         },
         {
           "hour": 19,
-          "mph": 19,
+          "mph": 9,
           "dir": "SW"
         },
         {
           "hour": 20,
-          "mph": 13,
+          "mph": 10,
           "dir": "SW"
         },
         {
           "hour": 21,
-          "mph": 8,
+          "mph": 9,
           "dir": "SW"
         },
         {
           "hour": 22,
-          "mph": 11,
+          "mph": 8,
           "dir": "SW"
         },
         {
           "hour": 23,
-          "mph": 7,
-          "dir": "W"
+          "mph": 9,
+          "dir": "SW"
         }
       ]
     },
@@ -430,43 +430,43 @@
       "hourlyWind": [
         {
           "hour": 0,
-          "mph": 3,
-          "dir": "NW"
+          "mph": 7,
+          "dir": "SW"
         },
         {
           "hour": 1,
-          "mph": 5,
-          "dir": "W"
+          "mph": 8,
+          "dir": "SW"
         },
         {
           "hour": 2,
           "mph": 6,
-          "dir": "SW"
+          "dir": "W"
         },
         {
           "hour": 3,
-          "mph": 6,
+          "mph": 7,
           "dir": "SW"
         },
         {
           "hour": 4,
-          "mph": 6,
-          "dir": "W"
+          "mph": 7,
+          "dir": "SW"
         },
         {
           "hour": 5,
-          "mph": 6,
+          "mph": 7,
           "dir": "W"
         },
         {
           "hour": 6,
-          "mph": 6,
+          "mph": 5,
           "dir": "W"
         },
         {
           "hour": 7,
           "mph": 6,
-          "dir": "SW"
+          "dir": "W"
         },
         {
           "hour": 8,
@@ -485,7 +485,7 @@
         },
         {
           "hour": 11,
-          "mph": 6,
+          "mph": 5,
           "dir": "W"
         },
         {
