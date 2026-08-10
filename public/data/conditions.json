@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-10T16:12:27.357Z",
+  "updated": "2026-08-10T17:13:11.105Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-10T14:30:00.357Z",
-        "end": "2026-08-10T16:30:00.357Z"
+        "start": "2026-08-10T14:30:00.105Z",
+        "end": "2026-08-10T16:30:00.105Z"
       },
       {
-        "start": "2026-08-11T03:06:00.357Z",
-        "end": "2026-08-11T05:06:00.357Z"
+        "start": "2026-08-11T03:06:00.105Z",
+        "end": "2026-08-11T05:06:00.105Z"
       }
     ],
     "minors": [
@@ -125,7 +125,7 @@
       "direction": "S",
       "chop": "Moderate",
       "swellHeightFt": 1.2,
-      "swellPeriodSec": 3.7,
+      "swellPeriodSec": 3.55,
       "swellDirection": "S",
       "windWaveHeightFt": 1.2
     },
@@ -134,13 +134,6 @@
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "10am",
-        "heightFt": 2.2,
-        "periodSec": 4.5,
-        "windDirLabel": "SW",
-        "windSpeedMph": 8
-      },
       {
         "label": "11am",
         "heightFt": 2.1,
@@ -160,7 +153,7 @@
         "heightFt": 2.1,
         "periodSec": 4.4,
         "windDirLabel": "SW",
-        "windSpeedMph": 11
+        "windSpeedMph": 10
       },
       {
         "label": "2pm",
@@ -174,32 +167,33 @@
         "heightFt": 2.2,
         "periodSec": 4.3,
         "windDirLabel": "SW",
-        "windSpeedMph": 11
+        "windSpeedMph": 12
       },
       {
         "label": "4pm",
         "heightFt": 2.3,
         "periodSec": 4.3,
         "windDirLabel": "SW",
-        "windSpeedMph": 11
+        "windSpeedMph": 13
+      },
+      {
+        "label": "5pm",
+        "heightFt": 2.4,
+        "periodSec": 4.25,
+        "windDirLabel": "SW",
+        "windSpeedMph": 12
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
     "tempF": 84,
-    "conditions": "Slight Chance Showers And Thunderstorms",
-    "windMph": 12,
+    "conditions": "Chance Showers And Thunderstorms",
+    "windMph": 13,
     "windGustMph": 15,
     "windDirLabel": "SW",
-    "humidityPct": 84,
+    "humidityPct": 83,
     "rainNext6h": [
-      {
-        "label": "10am",
-        "pct": 3,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "11am",
         "pct": 6,
@@ -208,58 +202,64 @@
       },
       {
         "label": "12pm",
-        "pct": 7,
+        "pct": 6,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "1pm",
-        "pct": 10,
+        "pct": 9,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "2pm",
-        "pct": 10,
+        "pct": 12,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "3pm",
-        "pct": 16,
+        "pct": 14,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "4pm",
-        "pct": 19,
+        "pct": 16,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "5pm",
+        "pct": 17,
         "precipIn": 0,
         "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "12:00 PM – 6:00 PM"
+      "windowLabel": "1:00 PM – 7:00 PM"
     }
   },
   "pressure": {
-    "current": 30.17,
-    "trend": "rising",
-    "trendNote": "rising 0.02 in since yesterday",
+    "current": 30.15,
+    "trend": "steady",
+    "trendNote": "steady 0.01 in since yesterday",
     "last24h": [
-      30.15,
-      30.13,
+      30.14,
+      30.1,
       30.09,
       30.12,
       30.12,
-      30.1,
-      30.1,
+      30.09,
+      30.13,
       30.15,
-      30.17
+      30.15
     ]
   },
   "water": {
-    "tempF": 83,
+    "tempF": 84,
     "clarity": "Fair to good",
     "note": "Cape Fear discharge near normal",
     "riverDischarge": "Normal"
@@ -271,11 +271,11 @@
     "reasons": [
       {
         "tier": "good",
-        "text": "Pressure rising"
+        "text": "Pressure steady"
       },
       {
         "tier": "good",
-        "text": "Wind light, 12 mph SW"
+        "text": "Wind light, 13 mph SW"
       },
       {
         "tier": "good",
@@ -360,7 +360,7 @@
         },
         {
           "hour": 13,
-          "mph": 11,
+          "mph": 10,
           "dir": "SW"
         },
         {
@@ -370,47 +370,47 @@
         },
         {
           "hour": 15,
-          "mph": 11,
+          "mph": 12,
           "dir": "SW"
         },
         {
           "hour": 16,
-          "mph": 11,
+          "mph": 13,
           "dir": "SW"
         },
         {
           "hour": 17,
-          "mph": 9,
+          "mph": 12,
           "dir": "SW"
         },
         {
           "hour": 18,
-          "mph": 5,
+          "mph": 12,
           "dir": "SW"
         },
         {
           "hour": 19,
-          "mph": 9,
-          "dir": "SW"
-        },
-        {
-          "hour": 20,
-          "mph": 9,
-          "dir": "SW"
-        },
-        {
-          "hour": 21,
-          "mph": 10,
-          "dir": "SW"
-        },
-        {
-          "hour": 22,
           "mph": 11,
           "dir": "SW"
         },
         {
-          "hour": 23,
+          "hour": 20,
+          "mph": 12,
+          "dir": "SW"
+        },
+        {
+          "hour": 21,
+          "mph": 8,
+          "dir": "SW"
+        },
+        {
+          "hour": 22,
           "mph": 10,
+          "dir": "SW"
+        },
+        {
+          "hour": 23,
+          "mph": 11,
           "dir": "SW"
         }
       ]
@@ -426,7 +426,7 @@
       "hourlyWind": [
         {
           "hour": 0,
-          "mph": 10,
+          "mph": 11,
           "dir": "SW"
         },
         {
@@ -436,7 +436,7 @@
         },
         {
           "hour": 2,
-          "mph": 10,
+          "mph": 11,
           "dir": "SW"
         },
         {
@@ -451,7 +451,7 @@
         },
         {
           "hour": 5,
-          "mph": 10,
+          "mph": 9,
           "dir": "SW"
         },
         {
