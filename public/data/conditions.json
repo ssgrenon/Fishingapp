@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-15T09:56:42.760Z",
+  "updated": "2026-08-15T10:28:05.232Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-15T18:42:00.760Z",
-        "end": "2026-08-15T20:42:00.760Z"
+        "start": "2026-08-15T18:42:00.232Z",
+        "end": "2026-08-15T20:42:00.232Z"
       },
       {
-        "start": "2026-08-16T06:00:00.760Z",
-        "end": "2026-08-16T08:00:00.760Z"
+        "start": "2026-08-16T06:00:00.232Z",
+        "end": "2026-08-16T08:00:00.232Z"
       }
     ],
     "minors": [
@@ -121,26 +121,19 @@
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
       "heightFt": 2,
-      "periodSec": 4,
+      "periodSec": 5,
       "direction": "S",
       "chop": "Moderate",
-      "swellHeightFt": 1.5,
-      "swellPeriodSec": 3.75,
+      "swellHeightFt": 1.4,
+      "swellPeriodSec": 3.8,
       "swellDirection": "S",
-      "windWaveHeightFt": 0.5
+      "windWaveHeightFt": 0.4
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "3am",
-        "heightFt": 2.1,
-        "periodSec": 4.35,
-        "windDirLabel": "W",
-        "windSpeedMph": 4
-      },
       {
         "label": "4am",
         "heightFt": 2,
@@ -182,6 +175,13 @@
         "periodSec": 4.65,
         "windDirLabel": "W",
         "windSpeedMph": 3
+      },
+      {
+        "label": "10am",
+        "heightFt": 1.6,
+        "periodSec": 4.7,
+        "windDirLabel": "SW",
+        "windSpeedMph": 2
       }
     ]
   },
@@ -194,12 +194,6 @@
     "windDirLabel": "W",
     "humidityPct": 88,
     "rainNext6h": [
-      {
-        "label": "3am",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "4am",
         "pct": 2,
@@ -214,7 +208,7 @@
       },
       {
         "label": "6am",
-        "pct": 2,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
@@ -235,6 +229,12 @@
         "pct": 7,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "10am",
+        "pct": 8,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
@@ -248,11 +248,11 @@
     "trendNote": "rising 0.05 in since yesterday",
     "last24h": [
       30.02,
-      30.09,
-      30.11,
       30.1,
-      30.05,
+      30.11,
+      30.09,
       30.06,
+      30.07,
       30.09,
       30.08,
       30.07
