@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-15T17:55:55.193Z",
+  "updated": "2026-08-15T18:37:12.038Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-15T18:42:00.193Z",
-        "end": "2026-08-15T20:42:00.193Z"
+        "start": "2026-08-15T18:42:00.038Z",
+        "end": "2026-08-15T20:42:00.038Z"
       },
       {
-        "start": "2026-08-16T06:00:00.193Z",
-        "end": "2026-08-16T08:00:00.193Z"
+        "start": "2026-08-16T06:00:00.038Z",
+        "end": "2026-08-16T08:00:00.038Z"
       }
     ],
     "minors": [
@@ -124,23 +124,16 @@
       "periodSec": 4,
       "direction": "S",
       "chop": "Light",
-      "swellHeightFt": 1.1,
-      "swellPeriodSec": 3.45,
+      "swellHeightFt": 1,
+      "swellPeriodSec": 3.55,
       "swellDirection": "S",
-      "windWaveHeightFt": 0.2
+      "windWaveHeightFt": 0.3
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "11am",
-        "heightFt": 1.7,
-        "periodSec": 4.85,
-        "windDirLabel": "SW",
-        "windSpeedMph": 6
-      },
       {
         "label": "12pm",
         "heightFt": 1.6,
@@ -182,24 +175,25 @@
         "periodSec": 4.9,
         "windDirLabel": "S",
         "windSpeedMph": 8
+      },
+      {
+        "label": "6pm",
+        "heightFt": 1.6,
+        "periodSec": 4.85,
+        "windDirLabel": "SE",
+        "windSpeedMph": 5
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 85,
-    "conditions": "Slight Chance Showers And Thunderstorms",
-    "windMph": 9,
+    "tempF": 78,
+    "conditions": "Chance Showers And Thunderstorms",
+    "windMph": 12,
     "windGustMph": 10,
     "windDirLabel": "SW",
-    "humidityPct": 82,
+    "humidityPct": 93,
     "rainNext6h": [
-      {
-        "label": "11am",
-        "pct": 3,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "12pm",
         "pct": 3,
@@ -235,11 +229,17 @@
         "pct": 26,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "6pm",
+        "pct": 30,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "1:00 PM – 7:00 PM"
+      "windowLabel": "2:00 PM – 8:00 PM"
     }
   },
   "pressure": {
@@ -249,11 +249,11 @@
     "last24h": [
       30.11,
       30.06,
-      30.05,
-      30.1,
+      30.06,
+      30.09,
       30.08,
       30.07,
-      30.09,
+      30.08,
       30.11,
       30.11
     ]
@@ -275,7 +275,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 9 mph SW"
+        "text": "Wind light, 12 mph SW"
       },
       {
         "tier": "good",
@@ -287,7 +287,7 @@
     {
       "date": "2026-08-15",
       "day": "Sat",
-      "windMph": 9,
+      "windMph": 12,
       "windDir": "SW",
       "waveFt": 2.4,
       "score": 66,
@@ -1073,8 +1073,8 @@
     {
       "date": "2026-08-21",
       "day": "Fri",
-      "windMph": 10,
-      "windDir": "SE",
+      "windMph": 12,
+      "windDir": "SW",
       "waveFt": 2.7,
       "score": 61,
       "tier": "caution",
