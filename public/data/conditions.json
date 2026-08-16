@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-16T15:56:34.816Z",
+  "updated": "2026-08-16T16:31:57.960Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-16T07:12:00.816Z",
-        "end": "2026-08-16T09:12:00.816Z"
+        "start": "2026-08-16T07:12:00.960Z",
+        "end": "2026-08-16T09:12:00.960Z"
       },
       {
-        "start": "2026-08-16T19:24:00.816Z",
-        "end": "2026-08-16T21:24:00.816Z"
+        "start": "2026-08-16T19:24:00.960Z",
+        "end": "2026-08-16T21:24:00.960Z"
       }
     ],
     "minors": [
@@ -121,26 +121,19 @@
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
       "heightFt": 1.6,
-      "periodSec": 5,
+      "periodSec": 4,
       "direction": "S",
       "chop": "Light",
       "swellHeightFt": 1,
-      "swellPeriodSec": 3.35,
+      "swellPeriodSec": 4.45,
       "swellDirection": "S",
-      "windWaveHeightFt": 0.5
+      "windWaveHeightFt": 0.3
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "9am",
-        "heightFt": 1.4,
-        "periodSec": 5.25,
-        "windDirLabel": "N",
-        "windSpeedMph": 3
-      },
       {
         "label": "10am",
         "heightFt": 1.4,
@@ -182,24 +175,25 @@
         "periodSec": 5.3,
         "windDirLabel": "E",
         "windSpeedMph": 5
+      },
+      {
+        "label": "4pm",
+        "heightFt": 1.3,
+        "periodSec": 5.5,
+        "windDirLabel": "SE",
+        "windSpeedMph": 4
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 83,
-    "conditions": "Chance Showers And Thunderstorms",
+    "tempF": 84,
+    "conditions": "Slight Chance Showers And Thunderstorms",
     "windMph": 7,
-    "windGustMph": 3,
-    "windDirLabel": "SE",
+    "windGustMph": 6,
+    "windDirLabel": "E",
     "humidityPct": 85,
     "rainNext6h": [
-      {
-        "label": "9am",
-        "pct": 2,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "10am",
         "pct": 4,
@@ -235,27 +229,33 @@
         "pct": 14,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "4pm",
+        "pct": 8,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "11:00 AM – 4:00 PM"
+      "windowLabel": "12:00 PM – 6:00 PM"
     }
   },
   "pressure": {
-    "current": 30.11,
-    "trend": "steady",
-    "trendNote": "steady 0.01 in since yesterday",
+    "current": 30.1,
+    "trend": "falling",
+    "trendNote": "falling 0.02 in since yesterday",
     "last24h": [
       30.12,
       30.09,
-      30.07,
-      30.08,
       30.09,
-      30.07,
+      30.09,
+      30.09,
       30.06,
-      30.09,
-      30.11
+      30.06,
+      30.1,
+      30.1
     ]
   },
   "water": {
@@ -265,17 +265,17 @@
     "riverDischarge": "Normal"
   },
   "biteScore": {
-    "value": 86,
-    "verdict": "Good",
-    "headline": "Good fishing conditions today",
+    "value": 64,
+    "verdict": "Fair",
+    "headline": "Fair fishing conditions today",
     "reasons": [
       {
-        "tier": "good",
-        "text": "Pressure steady"
+        "tier": "critical",
+        "text": "Pressure falling — front likely approaching"
       },
       {
         "tier": "good",
-        "text": "Wind light, 7 mph SE"
+        "text": "Wind light, 7 mph E"
       },
       {
         "tier": "good",
@@ -549,7 +549,7 @@
     {
       "date": "2026-08-18",
       "day": "Tue",
-      "windMph": 7,
+      "windMph": 8,
       "windDir": "W",
       "waveFt": 2.4,
       "score": 65,
