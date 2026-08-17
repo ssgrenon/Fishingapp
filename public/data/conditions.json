@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-17T17:32:27.258Z",
+  "updated": "2026-08-17T18:01:21.613Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-17T07:54:00.258Z",
-        "end": "2026-08-17T09:54:00.258Z"
+        "start": "2026-08-17T07:54:00.613Z",
+        "end": "2026-08-17T09:54:00.613Z"
       },
       {
-        "start": "2026-08-17T20:12:00.258Z",
-        "end": "2026-08-17T22:12:00.258Z"
+        "start": "2026-08-17T20:12:00.613Z",
+        "end": "2026-08-17T22:12:00.613Z"
       }
     ],
     "minors": [
@@ -127,20 +127,13 @@
       "swellHeightFt": 1.2,
       "swellPeriodSec": 5.7,
       "swellDirection": "SE",
-      "windWaveHeightFt": 0.7
+      "windWaveHeightFt": 0.9
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "11am",
-        "heightFt": 1.4,
-        "periodSec": 5.8,
-        "windDirLabel": "SW",
-        "windSpeedMph": 6
-      },
       {
         "label": "12pm",
         "heightFt": 1.5,
@@ -182,6 +175,13 @@
         "periodSec": 4.9,
         "windDirLabel": "S",
         "windSpeedMph": 8
+      },
+      {
+        "label": "6pm",
+        "heightFt": 1.9,
+        "periodSec": 4.8,
+        "windDirLabel": "S",
+        "windSpeedMph": 9
       }
     ]
   },
@@ -192,14 +192,8 @@
     "windMph": 9,
     "windGustMph": 8,
     "windDirLabel": "SW",
-    "humidityPct": 82,
+    "humidityPct": 83,
     "rainNext6h": [
-      {
-        "label": "11am",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "12pm",
         "pct": 1,
@@ -235,6 +229,12 @@
         "pct": 2,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "6pm",
+        "pct": 7,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
@@ -243,25 +243,25 @@
     }
   },
   "pressure": {
-    "current": 29.97,
+    "current": 29.96,
     "trend": "falling",
-    "trendNote": "falling 0.13 in since yesterday",
+    "trendNote": "falling 0.14 in since yesterday",
     "last24h": [
       30.1,
       30.03,
-      30.02,
-      29.99,
+      30.01,
+      29.97,
       30,
       29.96,
       29.98,
       29.99,
-      29.97
+      29.96
     ]
   },
   "water": {
     "tempF": 86,
     "clarity": "Fair to good",
-    "note": "Cape Fear discharge near normal",
+    "note": "Water clarity proxy temporarily unavailable.",
     "riverDischarge": "Normal"
   },
   "biteScore": {
