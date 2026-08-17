@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-17T15:57:26.641Z",
+  "updated": "2026-08-17T16:34:26.351Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-17T07:54:00.641Z",
-        "end": "2026-08-17T09:54:00.641Z"
+        "start": "2026-08-17T07:54:00.351Z",
+        "end": "2026-08-17T09:54:00.351Z"
       },
       {
-        "start": "2026-08-17T20:12:00.641Z",
-        "end": "2026-08-17T22:12:00.641Z"
+        "start": "2026-08-17T20:12:00.351Z",
+        "end": "2026-08-17T22:12:00.351Z"
       }
     ],
     "minors": [
@@ -121,26 +121,19 @@
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
       "heightFt": 1.6,
-      "periodSec": 8,
+      "periodSec": 7,
       "direction": "S",
       "chop": "Light",
       "swellHeightFt": 1.2,
-      "swellPeriodSec": 5.8,
+      "swellPeriodSec": 5.75,
       "swellDirection": "SE",
-      "windWaveHeightFt": 0.3
+      "windWaveHeightFt": 0.5
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "9am",
-        "heightFt": 1.4,
-        "periodSec": 5.85,
-        "windDirLabel": "SW",
-        "windSpeedMph": 7
-      },
       {
         "label": "10am",
         "heightFt": 1.4,
@@ -182,6 +175,13 @@
         "periodSec": 5.15,
         "windDirLabel": "SW",
         "windSpeedMph": 8
+      },
+      {
+        "label": "4pm",
+        "heightFt": 1.7,
+        "periodSec": 5,
+        "windDirLabel": "S",
+        "windSpeedMph": 8
       }
     ]
   },
@@ -189,17 +189,11 @@
     "source": "NWS gridpoint ILM",
     "tempF": 85,
     "conditions": "Sunny",
-    "windMph": 7,
+    "windMph": 8,
     "windGustMph": 8,
     "windDirLabel": "SW",
-    "humidityPct": 83,
+    "humidityPct": 82,
     "rainNext6h": [
-      {
-        "label": "9am",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "10am",
         "pct": 1,
@@ -235,6 +229,12 @@
         "pct": 2,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "4pm",
+        "pct": 2,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
@@ -245,14 +245,14 @@
   "pressure": {
     "current": 29.98,
     "trend": "falling",
-    "trendNote": "falling 0.13 in since yesterday",
+    "trendNote": "falling 0.12 in since yesterday",
     "last24h": [
-      30.11,
-      30.06,
-      30.02,
+      30.1,
+      30.04,
       30.03,
-      29.98,
-      29.98,
+      30.02,
+      29.99,
+      29.97,
       29.96,
       29.99,
       29.98
@@ -279,7 +279,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 7 mph SW"
+        "text": "Wind light, 8 mph SW"
       },
       {
         "tier": "good",
