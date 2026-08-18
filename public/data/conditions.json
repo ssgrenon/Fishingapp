@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-18T05:49:40.269Z",
+  "updated": "2026-08-18T06:53:27.129Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-18T08:36:00.269Z",
-        "end": "2026-08-18T10:36:00.269Z"
+        "start": "2026-08-18T08:36:00.129Z",
+        "end": "2026-08-18T10:36:00.129Z"
       },
       {
-        "start": "2026-08-18T20:54:00.269Z",
-        "end": "2026-08-18T22:54:00.269Z"
+        "start": "2026-08-18T20:54:00.129Z",
+        "end": "2026-08-18T22:54:00.129Z"
       }
     ],
     "minors": [
@@ -124,23 +124,16 @@
       "periodSec": 4,
       "direction": "S",
       "chop": "Moderate",
-      "swellHeightFt": 1.5,
+      "swellHeightFt": 1.6,
       "swellPeriodSec": 3.55,
       "swellDirection": "S",
-      "windWaveHeightFt": 1.4
+      "windWaveHeightFt": 1.5
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "11pm",
-        "heightFt": 2.3,
-        "periodSec": 4.7,
-        "windDirLabel": "SW",
-        "windSpeedMph": 9
-      },
       {
         "label": "12am",
         "heightFt": 2.4,
@@ -182,24 +175,25 @@
         "periodSec": 5.1,
         "windDirLabel": "SW",
         "windSpeedMph": 7
+      },
+      {
+        "label": "6am",
+        "heightFt": 2.3,
+        "periodSec": 5.25,
+        "windDirLabel": "SW",
+        "windSpeedMph": 5
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
     "tempF": 85,
-    "conditions": "Clear",
+    "conditions": "Mostly Clear",
     "windMph": 10,
-    "windGustMph": 12,
+    "windGustMph": 18,
     "windDirLabel": "SW",
-    "humidityPct": 84,
+    "humidityPct": 88,
     "rainNext6h": [
-      {
-        "label": "11pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "12am",
         "pct": 1,
@@ -235,6 +229,12 @@
         "pct": 2,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "6am",
+        "pct": 2,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
@@ -243,19 +243,19 @@
     }
   },
   "pressure": {
-    "current": 29.91,
+    "current": 29.89,
     "trend": "falling",
-    "trendNote": "falling 0.09 in since yesterday",
+    "trendNote": "falling 0.10 in since yesterday",
     "last24h": [
-      30,
-      29.96,
-      29.98,
       29.99,
       29.96,
+      29.99,
+      29.99,
+      29.95,
+      29.91,
+      29.91,
       29.92,
-      29.89,
-      29.92,
-      29.91
+      29.89
     ]
   },
   "water": {
@@ -265,7 +265,7 @@
     "riverDischarge": "Normal"
   },
   "biteScore": {
-    "value": 70,
+    "value": 59,
     "verdict": "Fair",
     "headline": "Fair bite window this morning",
     "reasons": [
@@ -278,8 +278,8 @@
         "text": "Overlaps dawn"
       },
       {
-        "tier": "good",
-        "text": "Wind light, 10 mph SW"
+        "tier": "caution",
+        "text": "SW wind freshening, gusts to 18 mph"
       },
       {
         "tier": "caution",
@@ -295,7 +295,7 @@
     {
       "date": "2026-08-18",
       "day": "Tue",
-      "windMph": 9,
+      "windMph": 10,
       "windDir": "SW",
       "waveFt": 2.4,
       "score": 65,
@@ -426,7 +426,7 @@
     {
       "date": "2026-08-19",
       "day": "Wed",
-      "windMph": 7,
+      "windMph": 8,
       "windDir": "E",
       "waveFt": 2.3,
       "score": 67,
@@ -557,7 +557,7 @@
     {
       "date": "2026-08-20",
       "day": "Thu",
-      "windMph": 9,
+      "windMph": 10,
       "windDir": "S",
       "waveFt": 1.8,
       "score": 70,
@@ -950,10 +950,10 @@
     {
       "date": "2026-08-23",
       "day": "Sun",
-      "windMph": 14,
+      "windMph": 12,
       "windDir": "SW",
       "waveFt": 2.5,
-      "score": 61,
+      "score": 64,
       "tier": "caution",
       "hourlyWind": [
         {
@@ -1081,8 +1081,8 @@
     {
       "date": "2026-08-24",
       "day": "Mon",
-      "windMph": 9,
-      "windDir": "SW",
+      "windMph": 8,
+      "windDir": "W",
       "waveFt": 2.9,
       "score": 58,
       "tier": "caution",
