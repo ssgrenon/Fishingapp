@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-20T09:40:16.210Z",
+  "updated": "2026-08-20T10:04:36.398Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-20T10:12:00.210Z",
-        "end": "2026-08-20T12:12:00.210Z"
+        "start": "2026-08-20T10:12:00.398Z",
+        "end": "2026-08-20T12:12:00.398Z"
       },
       {
-        "start": "2026-08-20T22:36:00.210Z",
-        "end": "2026-08-21T00:36:00.210Z"
+        "start": "2026-08-20T22:36:00.398Z",
+        "end": "2026-08-21T00:36:00.398Z"
       }
     ],
     "minors": [
@@ -125,7 +125,7 @@
       "direction": "S",
       "chop": "Light",
       "swellHeightFt": 1.1,
-      "swellPeriodSec": 6.2,
+      "swellPeriodSec": 6.15,
       "swellDirection": "SE",
       "windWaveHeightFt": 0
     },
@@ -135,24 +135,17 @@
     },
     "next6h": [
       {
-        "label": "3am",
-        "heightFt": 1.4,
-        "periodSec": 6.65,
-        "windDirLabel": "NE",
-        "windSpeedMph": 2
-      },
-      {
         "label": "4am",
         "heightFt": 1.3,
         "periodSec": 6.65,
         "windDirLabel": "SW",
-        "windSpeedMph": 2
+        "windSpeedMph": 3
       },
       {
         "label": "5am",
         "heightFt": 1.3,
         "periodSec": 6.65,
-        "windDirLabel": "S",
+        "windDirLabel": "SW",
         "windSpeedMph": 4
       },
       {
@@ -181,25 +174,26 @@
         "heightFt": 1.3,
         "periodSec": 6.7,
         "windDirLabel": "E",
-        "windSpeedMph": 2
+        "windSpeedMph": 3
+      },
+      {
+        "label": "10am",
+        "heightFt": 1.2,
+        "periodSec": 6.75,
+        "windDirLabel": "SE",
+        "windSpeedMph": 3
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
     "tempF": 83,
-    "conditions": "Mostly Clear",
-    "windMph": 3,
+    "conditions": "Sunny",
+    "windMph": 2,
     "windGustMph": 7,
     "windDirLabel": "S",
     "humidityPct": 90,
     "rainNext6h": [
-      {
-        "label": "3am",
-        "pct": 5,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "4am",
         "pct": 5,
@@ -214,7 +208,7 @@
       },
       {
         "label": "6am",
-        "pct": 2,
+        "pct": 1,
         "precipIn": 0,
         "storm": false
       },
@@ -232,6 +226,12 @@
       },
       {
         "label": "9am",
+        "pct": 4,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "10am",
         "pct": 5,
         "precipIn": 0,
         "storm": false
@@ -245,9 +245,9 @@
   "pressure": {
     "current": 29.94,
     "trend": "rising",
-    "trendNote": "rising 0.08 in since yesterday",
+    "trendNote": "rising 0.07 in since yesterday",
     "last24h": [
-      29.86,
+      29.87,
       29.91,
       29.93,
       29.93,
@@ -279,7 +279,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 3 mph S"
+        "text": "Wind light, 2 mph S"
       },
       {
         "tier": "good",
@@ -319,13 +319,13 @@
         },
         {
           "hour": 4,
-          "mph": 2,
+          "mph": 3,
           "dir": "SW"
         },
         {
           "hour": 5,
           "mph": 4,
-          "dir": "S"
+          "dir": "SW"
         },
         {
           "hour": 6,
@@ -344,7 +344,7 @@
         },
         {
           "hour": 9,
-          "mph": 2,
+          "mph": 3,
           "dir": "E"
         },
         {
@@ -354,17 +354,17 @@
         },
         {
           "hour": 11,
-          "mph": 6,
-          "dir": "S"
+          "mph": 7,
+          "dir": "SE"
         },
         {
           "hour": 12,
-          "mph": 7,
-          "dir": "S"
+          "mph": 8,
+          "dir": "SE"
         },
         {
           "hour": 13,
-          "mph": 7,
+          "mph": 8,
           "dir": "S"
         },
         {
@@ -379,7 +379,7 @@
         },
         {
           "hour": 16,
-          "mph": 8,
+          "mph": 9,
           "dir": "S"
         },
         {
