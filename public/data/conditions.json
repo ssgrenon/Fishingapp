@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-20T21:59:54.832Z",
+  "updated": "2026-08-20T22:33:06.897Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-20T10:12:00.832Z",
-        "end": "2026-08-20T12:12:00.832Z"
+        "start": "2026-08-20T10:12:00.897Z",
+        "end": "2026-08-20T12:12:00.897Z"
       },
       {
-        "start": "2026-08-20T22:36:00.832Z",
-        "end": "2026-08-21T00:36:00.832Z"
+        "start": "2026-08-20T22:36:00.897Z",
+        "end": "2026-08-21T00:36:00.897Z"
       }
     ],
     "minors": [
@@ -125,22 +125,15 @@
       "direction": "SE",
       "chop": "Light",
       "swellHeightFt": 1.1,
-      "swellPeriodSec": 6.35,
+      "swellPeriodSec": 6.3,
       "swellDirection": "SE",
-      "windWaveHeightFt": 0
+      "windWaveHeightFt": 0.1
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "3pm",
-        "heightFt": 1.3,
-        "periodSec": 6.95,
-        "windDirLabel": "S",
-        "windSpeedMph": 9
-      },
       {
         "label": "4pm",
         "heightFt": 1.2,
@@ -182,6 +175,13 @@
         "periodSec": 6.95,
         "windDirLabel": "S",
         "windSpeedMph": 7
+      },
+      {
+        "label": "10pm",
+        "heightFt": 1.3,
+        "periodSec": 6.7,
+        "windDirLabel": "S",
+        "windSpeedMph": 8
       }
     ]
   },
@@ -194,12 +194,6 @@
     "windDirLabel": "S",
     "humidityPct": 80,
     "rainNext6h": [
-      {
-        "label": "3pm",
-        "pct": 4,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "4pm",
         "pct": 8,
@@ -235,6 +229,12 @@
         "pct": 3,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "10pm",
+        "pct": 4,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
@@ -245,16 +245,16 @@
   "pressure": {
     "current": 29.96,
     "trend": "rising",
-    "trendNote": "rising 0.04 in since yesterday",
+    "trendNote": "rising 0.03 in since yesterday",
     "last24h": [
-      29.92,
       29.93,
-      29.97,
+      29.94,
+      29.98,
       29.96,
-      29.93,
-      29.99,
+      29.94,
+      30,
       30.04,
-      30.01,
+      29.98,
       29.96
     ]
   },
