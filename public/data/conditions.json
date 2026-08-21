@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-21T21:58:12.745Z",
+  "updated": "2026-08-21T22:30:29.102Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-21T11:00:00.745Z",
-        "end": "2026-08-21T13:00:00.745Z"
+        "start": "2026-08-21T11:00:00.102Z",
+        "end": "2026-08-21T13:00:00.102Z"
       },
       {
-        "start": "2026-08-21T23:24:00.745Z",
-        "end": "2026-08-22T01:24:00.745Z"
+        "start": "2026-08-21T23:24:00.102Z",
+        "end": "2026-08-22T01:24:00.102Z"
       }
     ],
     "minors": [
@@ -120,12 +120,12 @@
   "waves": {
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
-      "heightFt": 2.6,
+      "heightFt": 3,
       "periodSec": 4,
       "direction": "S",
       "chop": "Moderate",
       "swellHeightFt": 1,
-      "swellPeriodSec": 3,
+      "swellPeriodSec": 2.7,
       "swellDirection": "S",
       "windWaveHeightFt": 0.1
     },
@@ -134,13 +134,6 @@
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "3pm",
-        "heightFt": 1.4,
-        "periodSec": 6.25,
-        "windDirLabel": "S",
-        "windSpeedMph": 8
-      },
       {
         "label": "4pm",
         "heightFt": 1.4,
@@ -182,24 +175,25 @@
         "periodSec": 5.9,
         "windDirLabel": "N",
         "windSpeedMph": 8
+      },
+      {
+        "label": "10pm",
+        "heightFt": 1.6,
+        "periodSec": 5.55,
+        "windDirLabel": "N",
+        "windSpeedMph": 7
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 85,
+    "tempF": 84,
     "conditions": "Chance Showers And Thunderstorms",
     "windMph": 9,
     "windGustMph": 10,
     "windDirLabel": "S",
     "humidityPct": 82,
     "rainNext6h": [
-      {
-        "label": "3pm",
-        "pct": 4,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "4pm",
         "pct": 12,
@@ -214,54 +208,60 @@
       },
       {
         "label": "6pm",
-        "pct": 12,
+        "pct": 9,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "7pm",
-        "pct": 18,
+        "pct": 19,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "8pm",
-        "pct": 21,
+        "pct": 19,
         "precipIn": 0.06,
         "storm": false
       },
       {
         "label": "9pm",
-        "pct": 36,
+        "pct": 27,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "10pm",
+        "pct": 26,
         "precipIn": 0,
         "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "5:00 PM – 11:00 PM"
+      "windowLabel": "6:00 PM – 12:00 AM"
     }
   },
   "pressure": {
-    "current": 29.97,
-    "trend": "steady",
-    "trendNote": "steady 0.01 in since yesterday",
+    "current": 29.98,
+    "trend": "rising",
+    "trendNote": "rising 0.02 in since yesterday",
     "last24h": [
       29.96,
       29.99,
       30,
-      29.97,
-      29.99,
+      29.96,
+      30,
       30.02,
-      30.05,
-      29.99,
-      29.97
+      30.04,
+      29.98,
+      29.98
     ]
   },
   "water": {
     "tempF": 87,
     "clarity": "Fair to good",
-    "note": "Water clarity proxy temporarily unavailable.",
+    "note": "Cape Fear discharge near normal",
     "riverDischarge": "Normal"
   },
   "biteScore": {
@@ -271,7 +271,7 @@
     "reasons": [
       {
         "tier": "good",
-        "text": "Pressure steady"
+        "text": "Pressure rising"
       },
       {
         "tier": "good",
@@ -283,7 +283,7 @@
       },
       {
         "tier": "caution",
-        "text": "Waves moderate, 2.6 ft"
+        "text": "Waves moderate, 3.0 ft"
       },
       {
         "tier": "good",
