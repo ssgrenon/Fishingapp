@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-22T14:56:59.222Z",
+  "updated": "2026-08-22T15:27:11.114Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-22T11:48:00.222Z",
-        "end": "2026-08-22T13:48:00.222Z"
+        "start": "2026-08-22T11:48:00.114Z",
+        "end": "2026-08-22T13:48:00.114Z"
       },
       {
-        "start": "2026-08-23T00:18:00.222Z",
-        "end": "2026-08-23T02:18:00.222Z"
+        "start": "2026-08-23T00:18:00.114Z",
+        "end": "2026-08-23T02:18:00.114Z"
       }
     ],
     "minors": [
@@ -121,26 +121,19 @@
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
       "heightFt": 2,
-      "periodSec": 3,
+      "periodSec": 4,
       "direction": "SE",
       "chop": "Moderate",
-      "swellHeightFt": 2,
-      "swellPeriodSec": 3.5,
+      "swellHeightFt": 2.2,
+      "swellPeriodSec": 3.45,
       "swellDirection": "S",
-      "windWaveHeightFt": 0.3
+      "windWaveHeightFt": 0.1
     },
     "thresholds": {
       "calmMaxFt": 2.1,
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "8am",
-        "heightFt": 2.3,
-        "periodSec": 4.85,
-        "windDirLabel": "SW",
-        "windSpeedMph": 2
-      },
       {
         "label": "9am",
         "heightFt": 2.4,
@@ -182,6 +175,13 @@
         "periodSec": 5.3,
         "windDirLabel": "S",
         "windSpeedMph": 6
+      },
+      {
+        "label": "3pm",
+        "heightFt": 2.3,
+        "periodSec": 5.4,
+        "windDirLabel": "SW",
+        "windSpeedMph": 5
       }
     ]
   },
@@ -192,14 +192,8 @@
     "windMph": 8,
     "windGustMph": 10,
     "windDirLabel": "SW",
-    "humidityPct": 92,
+    "humidityPct": 90,
     "rainNext6h": [
-      {
-        "label": "8am",
-        "pct": 35,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "9am",
         "pct": 44,
@@ -214,47 +208,53 @@
       },
       {
         "label": "11am",
-        "pct": 39,
+        "pct": 46,
         "precipIn": 0.02,
         "storm": false
       },
       {
         "label": "12pm",
-        "pct": 28,
+        "pct": 35,
         "precipIn": 0.02,
         "storm": false
       },
       {
         "label": "1pm",
-        "pct": 14,
+        "pct": 19,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "2pm",
-        "pct": 5,
+        "pct": 6,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "3pm",
+        "pct": 9,
         "precipIn": 0,
         "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "10:00 AM – 4:00 PM"
+      "windowLabel": "11:00 AM – 5:00 PM"
     }
   },
   "pressure": {
     "current": 29.98,
     "trend": "falling",
-    "trendNote": "falling 0.06 in since yesterday",
+    "trendNote": "falling 0.07 in since yesterday",
     "last24h": [
-      30.04,
-      30.02,
-      29.96,
-      30.01,
-      30.02,
-      30.04,
+      30.05,
+      30,
       29.97,
-      29.98,
+      30.03,
+      30.01,
+      30.01,
+      29.96,
+      29.97,
       29.98
     ]
   },
