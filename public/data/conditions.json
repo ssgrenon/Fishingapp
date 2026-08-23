@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-23T18:37:09.331Z",
+  "updated": "2026-08-23T19:02:07.108Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-23T12:42:00.331Z",
-        "end": "2026-08-23T14:42:00.331Z"
+        "start": "2026-08-23T12:42:00.108Z",
+        "end": "2026-08-23T14:42:00.108Z"
       },
       {
-        "start": "2026-08-24T01:06:00.331Z",
-        "end": "2026-08-24T03:06:00.331Z"
+        "start": "2026-08-24T01:06:00.108Z",
+        "end": "2026-08-24T03:06:00.108Z"
       }
     ],
     "minors": [
@@ -124,8 +124,8 @@
       "periodSec": 6,
       "direction": "S",
       "chop": "Moderate",
-      "swellHeightFt": 2.2,
-      "swellPeriodSec": 4.2,
+      "swellHeightFt": 2.1,
+      "swellPeriodSec": 4.15,
       "swellDirection": "S",
       "windWaveHeightFt": 0.7
     },
@@ -135,25 +135,18 @@
     },
     "next6h": [
       {
-        "label": "12pm",
-        "heightFt": 2.4,
-        "periodSec": 5.1,
-        "windDirLabel": "SW",
-        "windSpeedMph": 6
-      },
-      {
         "label": "1pm",
         "heightFt": 2.4,
         "periodSec": 5.1,
-        "windDirLabel": "SW",
-        "windSpeedMph": 5
+        "windDirLabel": "S",
+        "windSpeedMph": 7
       },
       {
         "label": "2pm",
         "heightFt": 2.4,
         "periodSec": 5.1,
         "windDirLabel": "SW",
-        "windSpeedMph": 7
+        "windSpeedMph": 8
       },
       {
         "label": "3pm",
@@ -167,21 +160,28 @@
         "heightFt": 2.3,
         "periodSec": 5.1,
         "windDirLabel": "S",
-        "windSpeedMph": 7
+        "windSpeedMph": 9
       },
       {
         "label": "5pm",
         "heightFt": 2.2,
         "periodSec": 5.05,
         "windDirLabel": "S",
-        "windSpeedMph": 10
+        "windSpeedMph": 11
       },
       {
         "label": "6pm",
         "heightFt": 2.2,
         "periodSec": 4.95,
         "windDirLabel": "S",
-        "windSpeedMph": 10
+        "windSpeedMph": 8
+      },
+      {
+        "label": "7pm",
+        "heightFt": 2.3,
+        "periodSec": 4.85,
+        "windDirLabel": "S",
+        "windSpeedMph": 8
       }
     ]
   },
@@ -189,17 +189,11 @@
     "source": "NWS gridpoint ILM",
     "tempF": 84,
     "conditions": "Sunny",
-    "windMph": 8,
-    "windGustMph": 14,
+    "windMph": 9,
+    "windGustMph": 12,
     "windDirLabel": "SW",
-    "humidityPct": 76,
+    "humidityPct": 78,
     "rainNext6h": [
-      {
-        "label": "12pm",
-        "pct": 2,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "1pm",
         "pct": 2,
@@ -235,11 +229,17 @@
         "pct": 23,
         "precipIn": 0,
         "storm": false
+      },
+      {
+        "label": "7pm",
+        "pct": 22,
+        "precipIn": 0,
+        "storm": false
       }
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "2:00 PM – 7:00 PM"
+      "windowLabel": "4:00 PM – 9:00 PM"
     }
   },
   "pressure": {
@@ -248,11 +248,11 @@
     "trendNote": "steady 0.00 in since yesterday",
     "last24h": [
       29.96,
-      29.93,
-      29.94,
+      29.92,
+      29.95,
       29.94,
       29.91,
-      29.87,
+      29.89,
       29.96,
       29.99,
       29.96
@@ -275,7 +275,7 @@
       },
       {
         "tier": "good",
-        "text": "Wind light, 8 mph SW"
+        "text": "Wind light, 9 mph SW"
       },
       {
         "tier": "caution",
@@ -291,7 +291,7 @@
     {
       "date": "2026-08-23",
       "day": "Sun",
-      "windMph": 9,
+      "windMph": 10,
       "windDir": "SW",
       "waveFt": 2.6,
       "score": 63,
@@ -364,12 +364,12 @@
         },
         {
           "hour": 13,
-          "mph": 5,
-          "dir": "SW"
+          "mph": 7,
+          "dir": "S"
         },
         {
           "hour": 14,
-          "mph": 7,
+          "mph": 8,
           "dir": "SW"
         },
         {
@@ -379,42 +379,42 @@
         },
         {
           "hour": 16,
-          "mph": 7,
+          "mph": 9,
           "dir": "S"
         },
         {
           "hour": 17,
-          "mph": 10,
+          "mph": 11,
           "dir": "S"
         },
         {
           "hour": 18,
-          "mph": 10,
-          "dir": "S"
-        },
-        {
-          "hour": 19,
-          "mph": 7,
-          "dir": "S"
-        },
-        {
-          "hour": 20,
-          "mph": 7,
-          "dir": "S"
-        },
-        {
-          "hour": 21,
-          "mph": 6,
-          "dir": "SW"
-        },
-        {
-          "hour": 22,
           "mph": 8,
           "dir": "S"
         },
         {
-          "hour": 23,
+          "hour": 19,
+          "mph": 8,
+          "dir": "S"
+        },
+        {
+          "hour": 20,
           "mph": 9,
+          "dir": "S"
+        },
+        {
+          "hour": 21,
+          "mph": 7,
+          "dir": "S"
+        },
+        {
+          "hour": 22,
+          "mph": 7,
+          "dir": "S"
+        },
+        {
+          "hour": 23,
+          "mph": 6,
           "dir": "S"
         }
       ]
@@ -430,7 +430,7 @@
       "hourlyWind": [
         {
           "hour": 0,
-          "mph": 8,
+          "mph": 9,
           "dir": "S"
         },
         {
@@ -450,23 +450,23 @@
         },
         {
           "hour": 4,
-          "mph": 5,
-          "dir": "W"
+          "mph": 6,
+          "dir": "S"
         },
         {
           "hour": 5,
-          "mph": 2,
-          "dir": "SW"
+          "mph": 7,
+          "dir": "S"
         },
         {
           "hour": 6,
-          "mph": 4,
-          "dir": "N"
+          "mph": 5,
+          "dir": "SW"
         },
         {
           "hour": 7,
-          "mph": 7,
-          "dir": "S"
+          "mph": 6,
+          "dir": "SW"
         },
         {
           "hour": 8,
@@ -553,8 +553,8 @@
     {
       "date": "2026-08-25",
       "day": "Tue",
-      "windMph": 8,
-      "windDir": "NE",
+      "windMph": 6,
+      "windDir": "N",
       "waveFt": 1.8,
       "score": 70,
       "tier": "good",
@@ -684,8 +684,8 @@
     {
       "date": "2026-08-26",
       "day": "Wed",
-      "windMph": 10,
-      "windDir": "SW",
+      "windMph": 9,
+      "windDir": "E",
       "waveFt": 1.8,
       "score": 70,
       "tier": "good",
@@ -1077,7 +1077,7 @@
     {
       "date": "2026-08-29",
       "day": "Sat",
-      "windMph": 9,
+      "windMph": 7,
       "windDir": "SW",
       "waveFt": 2.1,
       "score": 70,
