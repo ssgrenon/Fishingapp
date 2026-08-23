@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-23T21:26:53.424Z",
+  "updated": "2026-08-23T21:42:56.608Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-23T12:42:00.424Z",
-        "end": "2026-08-23T14:42:00.424Z"
+        "start": "2026-08-23T12:42:00.608Z",
+        "end": "2026-08-23T14:42:00.608Z"
       },
       {
-        "start": "2026-08-24T01:06:00.424Z",
-        "end": "2026-08-24T03:06:00.424Z"
+        "start": "2026-08-24T01:06:00.608Z",
+        "end": "2026-08-24T03:06:00.608Z"
       }
     ],
     "minors": [
@@ -121,7 +121,7 @@
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
       "heightFt": 2.3,
-      "periodSec": 6,
+      "periodSec": 5,
       "direction": "S",
       "chop": "Moderate",
       "swellHeightFt": 2,
@@ -153,46 +153,46 @@
         "heightFt": 2.2,
         "periodSec": 5.05,
         "windDirLabel": "SW",
-        "windSpeedMph": 9
+        "windSpeedMph": 10
       },
       {
         "label": "6pm",
         "heightFt": 2.2,
         "periodSec": 4.95,
-        "windDirLabel": "SW",
-        "windSpeedMph": 4
+        "windDirLabel": "S",
+        "windSpeedMph": 10
       },
       {
         "label": "7pm",
         "heightFt": 2.3,
         "periodSec": 4.85,
-        "windDirLabel": "SW",
-        "windSpeedMph": 7
+        "windDirLabel": "NW",
+        "windSpeedMph": 12
       },
       {
         "label": "8pm",
         "heightFt": 2.3,
         "periodSec": 4.8,
-        "windDirLabel": "SW",
-        "windSpeedMph": 7
+        "windDirLabel": "N",
+        "windSpeedMph": 2
       },
       {
         "label": "9pm",
         "heightFt": 2.3,
         "periodSec": 4.8,
-        "windDirLabel": "SW",
-        "windSpeedMph": 6
+        "windDirLabel": "E",
+        "windSpeedMph": 2
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
     "tempF": 83,
-    "conditions": "Slight Chance Showers And Thunderstorms",
+    "conditions": "Chance Showers And Thunderstorms",
     "windMph": 10,
     "windGustMph": 12,
     "windDirLabel": "SW",
-    "humidityPct": 79,
+    "humidityPct": 80,
     "rainNext6h": [
       {
         "label": "3pm",
@@ -239,39 +239,39 @@
     ],
     "stormRisk": {
       "present": true,
-      "windowLabel": "4:00 PM – 9:00 PM"
+      "windowLabel": "5:00 PM – 11:00 PM"
     }
   },
   "pressure": {
-    "current": 29.92,
-    "trend": "falling",
-    "trendNote": "falling 0.02 in since yesterday",
+    "current": 29.93,
+    "trend": "steady",
+    "trendNote": "steady 0.01 in since yesterday",
     "last24h": [
-      29.94,
-      29.94,
-      29.94,
       29.92,
+      29.95,
+      29.94,
+      29.9,
       29.88,
       29.96,
       29.99,
       29.96,
-      29.92
+      29.93
     ]
   },
   "water": {
     "tempF": 86,
     "clarity": "Fair to good",
-    "note": "Cape Fear discharge near normal",
+    "note": "Water clarity proxy temporarily unavailable.",
     "riverDischarge": "Normal"
   },
   "biteScore": {
-    "value": 60,
-    "verdict": "Fair",
-    "headline": "Fair fishing conditions today",
+    "value": 82,
+    "verdict": "Good",
+    "headline": "Good fishing conditions today",
     "reasons": [
       {
-        "tier": "critical",
-        "text": "Pressure falling — front likely approaching"
+        "tier": "good",
+        "text": "Pressure steady"
       },
       {
         "tier": "good",
@@ -384,33 +384,33 @@
         },
         {
           "hour": 17,
-          "mph": 9,
+          "mph": 10,
           "dir": "SW"
         },
         {
           "hour": 18,
-          "mph": 4,
-          "dir": "SW"
+          "mph": 10,
+          "dir": "S"
         },
         {
           "hour": 19,
-          "mph": 7,
-          "dir": "SW"
+          "mph": 12,
+          "dir": "NW"
         },
         {
           "hour": 20,
-          "mph": 7,
-          "dir": "SW"
+          "mph": 2,
+          "dir": "N"
         },
         {
           "hour": 21,
-          "mph": 6,
-          "dir": "SW"
+          "mph": 2,
+          "dir": "E"
         },
         {
           "hour": 22,
-          "mph": 8,
-          "dir": "S"
+          "mph": 4,
+          "dir": "SE"
         },
         {
           "hour": 23,
@@ -445,12 +445,12 @@
         },
         {
           "hour": 3,
-          "mph": 6,
+          "mph": 7,
           "dir": "S"
         },
         {
           "hour": 4,
-          "mph": 6,
+          "mph": 7,
           "dir": "S"
         },
         {
@@ -460,12 +460,12 @@
         },
         {
           "hour": 6,
-          "mph": 6,
+          "mph": 7,
           "dir": "S"
         },
         {
           "hour": 7,
-          "mph": 5,
+          "mph": 6,
           "dir": "SW"
         },
         {
@@ -475,13 +475,13 @@
         },
         {
           "hour": 9,
-          "mph": 6,
+          "mph": 7,
           "dir": "SW"
         },
         {
           "hour": 10,
-          "mph": 8,
-          "dir": "S"
+          "mph": 7,
+          "dir": "SW"
         },
         {
           "hour": 11,
