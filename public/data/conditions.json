@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-25T02:43:56.928Z",
+  "updated": "2026-08-25T03:30:33.700Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-24T13:30:00.928Z",
-        "end": "2026-08-24T15:30:00.928Z"
+        "start": "2026-08-24T13:30:00.700Z",
+        "end": "2026-08-24T15:30:00.700Z"
       },
       {
-        "start": "2026-08-25T02:00:00.928Z",
-        "end": "2026-08-25T04:00:00.928Z"
+        "start": "2026-08-25T02:00:00.700Z",
+        "end": "2026-08-25T04:00:00.700Z"
       }
     ],
     "minors": [
@@ -124,8 +124,8 @@
       "periodSec": 4,
       "direction": "S",
       "chop": "Moderate",
-      "swellHeightFt": 1.8,
-      "swellPeriodSec": 3.45,
+      "swellHeightFt": 1.6,
+      "swellPeriodSec": 3.35,
       "swellDirection": "S",
       "windWaveHeightFt": 0
     },
@@ -134,13 +134,6 @@
       "moderateMaxFt": 3.1
     },
     "next6h": [
-      {
-        "label": "8pm",
-        "heightFt": 2,
-        "periodSec": 5.05,
-        "windDirLabel": "NW",
-        "windSpeedMph": 3
-      },
       {
         "label": "9pm",
         "heightFt": 2,
@@ -182,6 +175,13 @@
         "periodSec": 5.15,
         "windDirLabel": "N",
         "windSpeedMph": 4
+      },
+      {
+        "label": "3am",
+        "heightFt": 1.9,
+        "periodSec": 5.15,
+        "windDirLabel": "N",
+        "windSpeedMph": 5
       }
     ]
   },
@@ -195,12 +195,6 @@
     "humidityPct": 88,
     "rainNext6h": [
       {
-        "label": "8pm",
-        "pct": 38,
-        "precipIn": 0.11,
-        "storm": false
-      },
-      {
         "label": "9pm",
         "pct": 11,
         "precipIn": 0,
@@ -208,30 +202,36 @@
       },
       {
         "label": "10pm",
-        "pct": 5,
+        "pct": 8,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "11pm",
-        "pct": 3,
+        "pct": 2,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "12am",
-        "pct": 4,
+        "pct": 3,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "1am",
-        "pct": 4,
+        "pct": 3,
         "precipIn": 0,
         "storm": false
       },
       {
         "label": "2am",
+        "pct": 1,
+        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "3am",
         "pct": 2,
         "precipIn": 0,
         "storm": false
@@ -243,23 +243,23 @@
     }
   },
   "pressure": {
-    "current": 29.99,
+    "current": 30.01,
     "trend": "rising",
-    "trendNote": "rising 0.02 in since yesterday",
+    "trendNote": "rising 0.04 in since yesterday",
     "last24h": [
       29.97,
-      29.97,
-      29.95,
       29.96,
+      29.94,
+      29.98,
       30,
-      29.96,
-      29.92,
+      29.94,
       29.91,
-      29.99
+      29.91,
+      30.01
     ]
   },
   "water": {
-    "tempF": 86,
+    "tempF": 85,
     "clarity": "Fair to good",
     "note": "Cape Fear discharge near normal",
     "riverDischarge": "Normal"
