@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-08-25T10:04:51.558Z",
+  "updated": "2026-08-25T10:41:59.051Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -61,11 +61,6 @@
     ],
     "next": [
       {
-        "type": "High",
-        "time": "2026-08-25T10:06:00.000Z",
-        "heightFt": 4.2
-      },
-      {
         "type": "Low",
         "time": "2026-08-25T16:13:00.000Z",
         "heightFt": 0.7
@@ -74,6 +69,11 @@
         "type": "High",
         "time": "2026-08-25T22:35:00.000Z",
         "heightFt": 5.1
+      },
+      {
+        "type": "Low",
+        "time": "2026-08-26T04:48:00.000Z",
+        "heightFt": 0.7
       }
     ],
     "thresholds": {
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-08-25T14:18:00.558Z",
-        "end": "2026-08-25T16:18:00.558Z"
+        "start": "2026-08-25T14:18:00.051Z",
+        "end": "2026-08-25T16:18:00.051Z"
       },
       {
-        "start": "2026-08-26T02:42:00.558Z",
-        "end": "2026-08-26T04:42:00.558Z"
+        "start": "2026-08-26T02:42:00.051Z",
+        "end": "2026-08-26T04:42:00.051Z"
       }
     ],
     "minors": [
@@ -187,12 +187,12 @@
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 77,
-    "conditions": "Partly Cloudy",
+    "tempF": 76,
+    "conditions": "Sunny",
     "windMph": 5,
-    "windGustMph": 6,
+    "windGustMph": 5,
     "windDirLabel": "NW",
-    "humidityPct": 91,
+    "humidityPct": 92,
     "rainNext6h": [
       {
         "label": "4am",
@@ -243,19 +243,19 @@
     }
   },
   "pressure": {
-    "current": 29.97,
+    "current": 29.98,
     "trend": "rising",
-    "trendNote": "rising 0.03 in since yesterday",
+    "trendNote": "rising 0.05 in since yesterday",
     "last24h": [
-      29.94,
-      29.99,
-      29.99,
-      29.95,
-      29.91,
-      29.9,
+      29.93,
       30,
       29.98,
-      29.97
+      29.91,
+      29.91,
+      29.93,
+      30.01,
+      29.97,
+      29.98
     ]
   },
   "water": {
@@ -283,7 +283,7 @@
       },
       {
         "tier": "good",
-        "text": "Incoming tide"
+        "text": "Outgoing tide"
       }
     ]
   },
