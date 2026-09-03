@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-09-03T18:26:19.166Z",
+  "updated": "2026-09-03T21:10:33.120Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-09-03T09:06:00.166Z",
-        "end": "2026-09-03T11:06:00.166Z"
+        "start": "2026-09-03T09:06:00.120Z",
+        "end": "2026-09-03T11:06:00.120Z"
       },
       {
-        "start": "2026-09-03T21:36:00.166Z",
-        "end": "2026-09-03T23:36:00.166Z"
+        "start": "2026-09-03T21:36:00.120Z",
+        "end": "2026-09-03T23:36:00.120Z"
       }
     ],
     "minors": [
@@ -120,14 +120,14 @@
   "waves": {
     "source": "NDBC SSBN7 Sunset Beach Nearshore Waves",
     "current": {
-      "heightFt": 2,
+      "heightFt": 1.6,
       "periodSec": 9,
       "direction": "SE",
-      "chop": "Moderate",
-      "swellHeightFt": 1.7,
-      "swellPeriodSec": 5.8,
+      "chop": "Light",
+      "swellHeightFt": 1.8,
+      "swellPeriodSec": 5.6,
       "swellDirection": "SE",
-      "windWaveHeightFt": 0.3
+      "windWaveHeightFt": 0.5
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -135,105 +135,79 @@
     },
     "next6h": [
       {
-        "label": "12pm",
-        "heightFt": 1.7,
-        "periodSec": 6.95,
-        "windDirLabel": "SE",
-        "windSpeedMph": 4
-      },
-      {
-        "label": "1pm",
-        "heightFt": 1.7,
-        "periodSec": 6.9,
-        "windDirLabel": "SE",
-        "windSpeedMph": 6
-      },
-      {
-        "label": "2pm",
-        "heightFt": 1.7,
-        "periodSec": 6.8,
-        "windDirLabel": "SE",
-        "windSpeedMph": 7
-      },
-      {
         "label": "3pm",
         "heightFt": 1.8,
-        "periodSec": 6.65,
-        "windDirLabel": "SE",
-        "windSpeedMph": 9
+        "periodSec": 6.65
       },
       {
         "label": "4pm",
         "heightFt": 1.8,
-        "periodSec": 6.5,
-        "windDirLabel": "SE",
-        "windSpeedMph": 8
+        "periodSec": 6.5
       },
       {
         "label": "5pm",
         "heightFt": 1.8,
-        "periodSec": 6.35,
-        "windDirLabel": "S",
-        "windSpeedMph": 10
+        "periodSec": 6.35
       },
       {
         "label": "6pm",
         "heightFt": 1.9,
-        "periodSec": 6.2,
-        "windDirLabel": "S",
-        "windSpeedMph": 9
+        "periodSec": 6.2
+      },
+      {
+        "label": "7pm",
+        "heightFt": 1.9,
+        "periodSec": 6.05
+      },
+      {
+        "label": "8pm",
+        "heightFt": 2,
+        "periodSec": 5.9
+      },
+      {
+        "label": "9pm",
+        "heightFt": 2,
+        "periodSec": 5.7
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 84,
+    "tempF": 85,
     "conditions": "Sunny",
     "windMph": 9,
-    "windGustMph": 8,
+    "windGustMph": 3,
     "windDirLabel": "S",
-    "humidityPct": 78,
+    "humidityPct": 79,
     "rainNext6h": [
-      {
-        "label": "12pm",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "1pm",
-        "pct": 0,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "2pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "3pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "4pm",
-        "pct": 1,
-        "precipIn": 0,
-        "storm": false
-      },
       {
         "label": "5pm",
         "pct": 1,
-        "precipIn": 0,
         "storm": false
       },
       {
         "label": "6pm",
         "pct": 1,
-        "precipIn": 0,
+        "storm": false
+      },
+      {
+        "label": "7pm",
+        "pct": 1,
+        "storm": false
+      },
+      {
+        "label": "8pm",
+        "pct": 1,
+        "storm": false
+      },
+      {
+        "label": "9pm",
+        "pct": 1,
+        "storm": false
+      },
+      {
+        "label": "10pm",
+        "pct": 0,
         "storm": false
       }
     ],
@@ -243,11 +217,10 @@
     }
   },
   "pressure": {
-    "current": 30.06,
-    "trend": "falling",
-    "trendNote": "falling 0.02 in since yesterday",
+    "current": 30.03,
+    "trend": "steady",
+    "trendNote": "steady 0.01 in since yesterday",
     "last24h": [
-      30.08,
       30.04,
       30.03,
       30.04,
@@ -255,7 +228,8 @@
       30.03,
       30.07,
       30.09,
-      30.06
+      30.06,
+      30.03
     ]
   },
   "water": {
@@ -265,13 +239,13 @@
     "riverDischarge": "Normal"
   },
   "biteScore": {
-    "value": 74,
-    "verdict": "Fair",
-    "headline": "Fair bite window this evening",
+    "value": 96,
+    "verdict": "Good",
+    "headline": "Good bite window this evening",
     "reasons": [
       {
-        "tier": "critical",
-        "text": "Pressure falling — front likely approaching"
+        "tier": "good",
+        "text": "Pressure steady"
       },
       {
         "tier": "good",
@@ -422,10 +396,10 @@
     {
       "date": "2026-09-04",
       "day": "Fri",
-      "windMph": 12,
+      "windMph": 13,
       "windDir": "SW",
       "waveFt": 2.4,
-      "score": 66,
+      "score": 65,
       "tier": "caution",
       "hourlyWind": [
         {
@@ -684,10 +658,10 @@
     {
       "date": "2026-09-06",
       "day": "Sun",
-      "windMph": 15,
+      "windMph": 12,
       "windDir": "NE",
       "waveFt": 2.7,
-      "score": 57,
+      "score": 61,
       "tier": "caution",
       "hourlyWind": [
         {
@@ -815,10 +789,10 @@
     {
       "date": "2026-09-07",
       "day": "Mon",
-      "windMph": 18,
+      "windMph": 21,
       "windDir": "NE",
       "waveFt": 4,
-      "score": 32,
+      "score": 28,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -946,10 +920,10 @@
     {
       "date": "2026-09-08",
       "day": "Tue",
-      "windMph": 14,
+      "windMph": 16,
       "windDir": "E",
       "waveFt": 4.1,
-      "score": 36,
+      "score": 33,
       "tier": "critical",
       "hourlyWind": [
         {
