@@ -4,7 +4,7 @@
     "lat": 33.9107,
     "lon": -78.1653
   },
-  "updated": "2026-11-21T12:24:42.754Z",
+  "updated": "2026-11-21T19:31:52.105Z",
   "isSample": false,
   "tide": {
     "station": "8659182",
@@ -61,11 +61,6 @@
     ],
     "next": [
       {
-        "type": "Low",
-        "time": "2026-11-21T15:25:00.000Z",
-        "heightFt": 0.5
-      },
-      {
         "type": "High",
         "time": "2026-11-21T21:20:00.000Z",
         "heightFt": 4.7
@@ -74,6 +69,11 @@
         "type": "Low",
         "time": "2026-11-22T03:32:00.000Z",
         "heightFt": 0
+      },
+      {
+        "type": "High",
+        "time": "2026-11-22T09:47:00.000Z",
+        "heightFt": 5.6
       }
     ],
     "thresholds": {
@@ -96,12 +96,12 @@
   "solunar": {
     "majors": [
       {
-        "start": "2026-11-21T13:12:00.754Z",
-        "end": "2026-11-21T15:12:00.754Z"
+        "start": "2026-11-21T13:12:00.105Z",
+        "end": "2026-11-21T15:12:00.105Z"
       },
       {
-        "start": "2026-11-22T01:42:00.754Z",
-        "end": "2026-11-22T03:42:00.754Z"
+        "start": "2026-11-22T01:42:00.105Z",
+        "end": "2026-11-22T03:42:00.105Z"
       }
     ],
     "minors": [
@@ -124,10 +124,10 @@
       "periodSec": 6,
       "direction": "SE",
       "chop": "Moderate",
-      "swellHeightFt": 4.3,
-      "swellPeriodSec": 7.15,
+      "swellHeightFt": 5.2,
+      "swellPeriodSec": 7.2,
       "swellDirection": "SE",
-      "windWaveHeightFt": 3.1
+      "windWaveHeightFt": 2.8
     },
     "thresholds": {
       "calmMaxFt": 2.1,
@@ -135,131 +135,105 @@
     },
     "next6h": [
       {
-        "label": "5am",
-        "heightFt": 5.2,
-        "periodSec": 6.95,
-        "windDirLabel": "NE",
-        "windSpeedMph": 11
+        "label": "12pm",
+        "heightFt": 5.8,
+        "periodSec": 7.55
       },
       {
-        "label": "6am",
-        "heightFt": 5.3,
-        "periodSec": 6.95,
-        "windDirLabel": "NE",
-        "windSpeedMph": 11
+        "label": "1pm",
+        "heightFt": 5.9,
+        "periodSec": 7.6
       },
       {
-        "label": "7am",
-        "heightFt": 5.4,
-        "periodSec": 7,
-        "windDirLabel": "NE",
-        "windSpeedMph": 11
+        "label": "2pm",
+        "heightFt": 6,
+        "periodSec": 7.65
       },
       {
-        "label": "8am",
-        "heightFt": 5.4,
-        "periodSec": 7.1,
-        "windDirLabel": "NE",
-        "windSpeedMph": 12
+        "label": "3pm",
+        "heightFt": 6,
+        "periodSec": 7.65
       },
       {
-        "label": "9am",
-        "heightFt": 5.4,
-        "periodSec": 7.25,
-        "windDirLabel": "NE",
-        "windSpeedMph": 12
+        "label": "4pm",
+        "heightFt": 6,
+        "periodSec": 7.65
       },
       {
-        "label": "10am",
-        "heightFt": 5.5,
-        "periodSec": 7.4,
-        "windDirLabel": "NE",
-        "windSpeedMph": 13
+        "label": "5pm",
+        "heightFt": 6.2,
+        "periodSec": 7.65
       },
       {
-        "label": "11am",
-        "heightFt": 5.6,
-        "periodSec": 7.5,
-        "windDirLabel": "NE",
-        "windSpeedMph": 14
+        "label": "6pm",
+        "heightFt": 6.2,
+        "periodSec": 7.65
       }
     ]
   },
   "weather": {
     "source": "NWS gridpoint ILM",
-    "tempF": 62,
-    "conditions": "Cloudy",
-    "windMph": 17,
-    "windGustMph": 22,
-    "windDirLabel": "NE",
-    "humidityPct": 84,
+    "tempF": 61,
+    "conditions": "Chance Rain Showers",
+    "windMph": 16,
+    "windGustMph": 24,
+    "windDirLabel": "E",
+    "humidityPct": 100,
     "rainNext6h": [
       {
-        "label": "5am",
-        "pct": 6,
-        "precipIn": 0,
+        "label": "2pm",
+        "pct": 53,
         "storm": false
       },
       {
-        "label": "6am",
-        "pct": 2,
-        "precipIn": 0,
+        "label": "3pm",
+        "pct": 52,
         "storm": false
       },
       {
-        "label": "7am",
-        "pct": 2,
-        "precipIn": 0,
+        "label": "4pm",
+        "pct": 51,
         "storm": false
       },
       {
-        "label": "8am",
-        "pct": 4,
-        "precipIn": 0,
+        "label": "5pm",
+        "pct": 59,
         "storm": false
       },
       {
-        "label": "9am",
-        "pct": 9,
-        "precipIn": 0.03,
+        "label": "6pm",
+        "pct": 68,
         "storm": false
       },
       {
-        "label": "10am",
-        "pct": 10,
-        "precipIn": 0,
-        "storm": false
-      },
-      {
-        "label": "11am",
-        "pct": 11,
-        "precipIn": 0,
-        "storm": false
+        "label": "7pm",
+        "pct": 76,
+        "storm": true
       }
     ],
     "stormRisk": {
-      "present": false,
-      "windowLabel": ""
+      "present": true,
+      "windowLabel": "7:00 PM – 8:00 PM"
     }
   },
   "pressure": {
-    "current": 30.09,
+    "current": 30.02,
     "trend": "falling",
-    "trendNote": "falling 0.15 in since yesterday",
+    "trendNote": "falling 0.16 in since yesterday",
     "last24h": [
-      30.24,
-      30.24,
-      30.2,
+      30.18,
       30.16,
       30.18,
-      30.17,
-      30.12,
+      30.16,
+      30.1,
       30.08,
-      30.09
+      30.09,
+      30.08,
+      30.02
     ]
   },
   "water": {
-    "tempF": 75,
+    "tempF": 74,
     "clarity": "Good, relatively clear",
     "note": "Cape Fear discharge below normal — typically clearer nearshore water",
     "riverDischarge": "Below normal"
@@ -275,7 +249,7 @@
       },
       {
         "tier": "caution",
-        "text": "NE wind freshening, gusts to 22 mph"
+        "text": "E wind freshening, gusts to 24 mph"
       },
       {
         "tier": "caution",
@@ -283,7 +257,7 @@
       },
       {
         "tier": "good",
-        "text": "Outgoing tide"
+        "text": "Incoming tide"
       }
     ]
   },
@@ -291,7 +265,7 @@
     {
       "date": "2026-11-21",
       "day": "Sat",
-      "windMph": 20,
+      "windMph": 16,
       "windDir": "NE",
       "waveFt": 6.2,
       "score": 5,
@@ -422,8 +396,8 @@
     {
       "date": "2026-11-22",
       "day": "Sun",
-      "windMph": 10,
-      "windDir": "SW",
+      "windMph": 9,
+      "windDir": "E",
       "waveFt": 6.7,
       "score": 5,
       "tier": "critical",
@@ -553,7 +527,7 @@
     {
       "date": "2026-11-23",
       "day": "Mon",
-      "windMph": 7,
+      "windMph": 6,
       "windDir": "NW",
       "waveFt": 3.6,
       "score": 47,
@@ -684,10 +658,10 @@
     {
       "date": "2026-11-24",
       "day": "Tue",
-      "windMph": 20,
+      "windMph": 21,
       "windDir": "NE",
       "waveFt": 3.3,
-      "score": 39,
+      "score": 38,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -815,7 +789,7 @@
     {
       "date": "2026-11-25",
       "day": "Wed",
-      "windMph": 25,
+      "windMph": 26,
       "windDir": "NE",
       "waveFt": 6.6,
       "score": 5,
@@ -946,10 +920,10 @@
     {
       "date": "2026-11-26",
       "day": "Thu",
-      "windMph": 17,
+      "windMph": 22,
       "windDir": "N",
       "waveFt": 4.8,
-      "score": 22,
+      "score": 15,
       "tier": "critical",
       "hourlyWind": [
         {
@@ -1077,8 +1051,8 @@
     {
       "date": "2026-11-27",
       "day": "Fri",
-      "windMph": 9,
-      "windDir": "NW",
+      "windMph": 10,
+      "windDir": "W",
       "waveFt": 1.5,
       "score": 70,
       "tier": "good",
